@@ -34,6 +34,30 @@ carousel.addEventListener('mousemove', (e) => {
   carousel.scrollLeft = scrollLeft - walk; // Ajuste la position du scroll
 });
 
+// Fonction pour animer le défilement
+function smoothScrollTo(element, target, duration) {
+  const start = element.scrollLeft;
+  const distance = target - start;
+  const startTime = performance.now();
+
+  function animation(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1); // Limite la progression à 1
+    element.scrollLeft = start + distance * easeInOutQuad(progress);
+
+    if (progress < 1) {
+      requestAnimationFrame(animation);
+    }
+  }
+
+  // Fonction d'interpolation pour un effet fluide
+  function easeInOutQuad(t) {
+    return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+  }
+
+  requestAnimationFrame(animation);
+}
+
 // Gestion du clic sur un élément pour l'agrandir et le centrer
 items.forEach((item) => {
   item.addEventListener('click', () => {
@@ -49,9 +73,7 @@ items.forEach((item) => {
     const carouselWidth = carousel.offsetWidth; // Largeur du carrousel
     const scrollPosition = itemOffset - (carouselWidth / 2) + (itemWidth / 2);
 
-    carousel.scrollTo({
-      left: scrollPosition,
-      behavior: 'smooth', // Défilement fluide
-    });
+    // Utilise la fonction d'animation pour un défilement plus lent
+    smoothScrollTo(carousel, scrollPosition, 1000); // Durée de 1000ms (1 seconde)
   });
 });
