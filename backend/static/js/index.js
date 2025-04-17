@@ -7,7 +7,7 @@ $(document).ready(function () {
     autoplayTimeout: 3000,
     autoplayHoverPause: true,
     smartSpeed: 800,
-    dots: true,
+    dots: false,
     margin: 10,
     items: 5,
     mouseDrag: true, // Active le click and drag
