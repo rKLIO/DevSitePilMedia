@@ -7,7 +7,9 @@
   <title>PILMEDIA - Agence Tech</title>
   <link rel="stylesheet" href="{% static 'css/index.css' %}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
 </head>
 <body>
 
@@ -64,77 +66,52 @@
     </div>
   </section>
 
-  <section class="section-carousel">
-    <h2>Réalisations</h2>
-    <div class="custom-carousel-container">
-      <div class="custom-carousel">
-        
-        <div class="item active">
-          <div class="item-desc">
-            <h3>1</h3>
-            <p>Description</p>
-          </div>
+  <section class="game-section">
+    <h2 class="line-title">trending games</h2>
+    <div class="owl-carousel custom-carousel owl-theme">
+      <div class="item active" style="background-image: url(https://images.bfmtv.com/S8MzFfgGL254Vn4u7blzLq2gAHo=/5x1:741x415/736x0/images/La-serie-animee-One-Piece-1955664.jpg);">
+        <div class="item-desc">
+          <h3>Dota 2</h3>
+          <p>Dota 2 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the
+            Ancients, which was a community-created mod for Blizzard Entertainment's Warcraft III.</p>
         </div>
-  
-        <div class="item">
-          <div class="item-desc">
-            <h3>2</h3>
-            <p>Description</p>
-          </div>
+      </div>
+      <div class="item" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/winter-3.jpg);">
+        <div class="item-desc">
+          <h3>The Witcher 3</h3>
+          <p>The Witcher 3 is a multiplayer online battle arena by Valve. The game is a sequel to Defense
+            of the Ancients, which was a community-created mod for Blizzard Entertainment's Warcraft III.</p>
         </div>
-  
-        <div class="item">
-          <div class="item-desc">
-            <h3>3</h3>
-            <p>Description</p>
-          </div>
+      </div>
+      <div class="item" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/rdr-2.jpg);">
+        <div class="item-desc">
+          <h3>RDR 2</h3>
+          <p>RDR 2 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the
+            Ancients, which was a community-created mod for Blizzard Entertainment's Warcraft III.</p>
         </div>
-  
-        <div class="item">
-          <div class="item-desc">
-            <h3>4</h3>
-            <p>Description</p>
-          </div>
+      </div>
+      <div class="item" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/pubg.jpg);">
+        <div class="item-desc">
+          <h3>PUBG Mobile</h3>
+          <p>PUBG 2 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the
+            Ancients, which was a community-created mod for Blizzard Entertainment's Warcraft III.</p>
         </div>
-
-        <div class="item">
-          <div class="item-desc">
-            <h3>4</h3>
-            <p>Description</p>
-          </div>
+      </div>
+      <div class="item" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/fortnite.jpg);">
+        <div class="item-desc">
+          <h3>Fortnite</h3>
+          <p>Battle royale where 100 players fight to be the last person standing. which was a community-created mod
+            for Blizzard Entertainment's Warcraft III.</p>
         </div>
-
-        <div class="item">
-          <div class="item-desc">
-            <h3>4</h3>
-            <p>Description</p>
-          </div>
+      </div>
+      <div class="item" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/far-cry-5.jpg);">
+        <div class="item-desc">
+          <h3>Far Cry 5</h3>
+          <p>Far Cry 5 is a 2018 first-person shooter game developed by Ubisoft.
+            which was a community-created mod for Blizzard Entertainment's Warcraft III.</p>
         </div>
-
-        <div class="item">
-          <div class="item-desc">
-            <h3>4</h3>
-            <p>Description</p>
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="item-desc">
-            <h3>4</h3>
-            <p>Description</p>
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="item-desc">
-            <h3>4</h3>
-            <p>Description</p>
-          </div>
-        </div>
-  
-      </div> <!-- fin .custom-carousel -->
-  
-    </div> <!-- fin .custom-carousel-container -->
+      </div>
+    </div>
   </section>
   
 
@@ -169,6 +146,12 @@
     <div id="map"></div>
     <p>&copy; 2025 PILMEDIA - Tous droits réservés.</p>
   </footer>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Owl Carousel JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
   <script src="{% static 'js/index.js' %}"></script>
 </body>
