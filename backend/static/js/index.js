@@ -21,3 +21,33 @@ $(document).ready(function () {
   });
 });
 
+// ----------------------------------------------------------------------------
+// Animation de la section "mockup" avec Intersection Observer
+
+ // Attends que la page soit chargée
+ document.addEventListener('DOMContentLoaded', function () {
+  const mockup = document.querySelector('.mockup');
+  const section = document.querySelector('#services');
+
+  // Rends le mockup visible
+  mockup.classList.add('loaded');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        mockup.classList.add('opened');
+        mockup.classList.add("active"); // Ajoute la classe active pour l'animation
+      } else {
+        mockup.classList.remove('opened'); // à garder ou pas selon l'effet voulu
+        mockup.classList.remove("active");
+      }
+    });
+  }, {
+    threshold: 0.5 // Quand 50% de la section est visible
+  });
+
+  observer.observe(section);
+});
+
+// ----------------------------------------------------------------------------
+
