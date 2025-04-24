@@ -43,7 +43,7 @@ $(document).ready(function () {
       }
     });
   }, {
-    threshold: 0.5 // Quand 50% de la section est visible
+    threshold: 0.3 // Quand 50% de la section est visible
   });
 
   observer.observe(section);
