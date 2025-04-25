@@ -231,8 +231,63 @@ footer {
 
 /* Styles pour le laptop */
 
+#services {
+  position: relative;
+  height: 100vh; /* La section prend toute la hauteur de la fenêtre */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#services h2{
+  z-index: 3;
+}
+
+.layer-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.background-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ff7eb3, #ff758c); /* Exemple de fond */
+  z-index: 1; /* Couche de fond */
+}
+
+.foreground-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; /* Couche au-dessus */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: chocolate;
+}
+
+.layer-container,
+.background-layer,
+.foreground-layer {
+  width: 100%;
+  height: 100%;
+  box-sizing: content-box; /* Ignore le padding */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .ordi_container {
-  text-align: center;
+  position: relative;
+  z-index: 3; /* Contenu au-dessus des deux couches */
+  display: flex;
+  justify-content: center;
 }
 
 .mockup {
@@ -319,6 +374,33 @@ footer {
     transform: translate3d(0, 0, 1px);
 }
 
-#laptop {
-  height: 100vh;
+.masque-carre {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px; /* taille du carré visible */
+  height: 200px;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.8); /* masque noir sauf dans le carré */
+  pointer-events: none; /* pour laisser passer les clics si besoin */
+  z-index: 10;
+}
+
+.part.top {
+  position: relative;
+  z-index: 5;
+  -webkit-mask: radial-gradient(circle, transparent 100px, black 101px);
+  mask: radial-gradient(circle, transparent 100px, black 101px);
+  /* Le cercle de 100px est transparent, tout le reste est visible */
+}
+
+.background-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  z-index: -1; /* Place le contenu derrière */
+  background-color: #ff7eb3;
 }
