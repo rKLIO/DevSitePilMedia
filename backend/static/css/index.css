@@ -4,8 +4,8 @@
 :root {
   --primary: #00c8d7;
   --secondary: #0078ff;
-  --bg: #0d0f17;
-  --text: #e0f7ff;
+  --bg: #ffffff;
+  --text: #0d0f17;
   --accent: #13f3ff;
   --gradient: linear-gradient(135deg, #00c8d7, #0078ff);
 }
@@ -27,7 +27,7 @@ body {
 .header {
   position: fixed;
   width: 100%;
-  background-color: rgba(13, 15, 23, 0.95);
+  background-color: var(--bg);
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
@@ -234,15 +234,41 @@ footer {
 #services {
   position: relative;
   height: 100vh; /* La section prend toute la hauteur de la fenêtre */
-  display: flex;
+  
+}
+
+.disposition_services,
+.disposition_about{
   align-items: center;
   justify-content: center;
+  display: flex;
+  height: 100%;
+  width: 100%;
 }
-
-#services h2{
+/* #services h2{ 
   z-index: 3;
+} */
+
+.grid_ordi {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    grid-template-rows: auto;
+    margin-top: 100px;
+ }
+
+ .grid_about {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  grid-template-rows: auto;
+  margin-top: 100px;
+  gap: 20px;
 }
 
+#txt_services {
+  grid-column : 1;
+  padding-right: 100px;
+}
+/*  
 .layer-container {
   position: relative;
   width: 100%;
@@ -255,8 +281,8 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #ff7eb3, #ff758c); /* Exemple de fond */
-  z-index: 1; /* Couche de fond */
+  background: linear-gradient(135deg, #ff7eb3, #ff758c); 
+  z-index: 1; 
 }
 
 .foreground-layer {
@@ -265,7 +291,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 2; /* Couche au-dessus */
+  z-index: 2; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -277,17 +303,18 @@ footer {
 .foreground-layer {
   width: 100%;
   height: 100%;
-  box-sizing: content-box; /* Ignore le padding */
+  box-sizing: content-box; 
   position: absolute;
   top: 0;
   left: 0;
-}
+} */
 
 .ordi_container {
   position: relative;
   z-index: 3; /* Contenu au-dessus des deux couches */
   display: flex;
   justify-content: center;
+  grid-column : 2
 }
 
 .mockup {
@@ -337,7 +364,7 @@ footer {
 .mockup .part .top {
   transform-origin: 50% 0;
   transform: translate3d(0, 0, -11px) rotateX(90deg);
-  transition: 1500ms;
+  transition: 900ms;
 }
 
 .mockup img {
@@ -369,29 +396,30 @@ footer {
     left: 5%;
     width: 90%;
     height: 90%;
-    border-radius: 6px;
+    border-radius: 4px;
     backface-visibility: hidden;
     transform: translate3d(0, 0, 1px);
+    overflow: hidden;
 }
-
+/* 
 .masque-carre {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 200px; /* taille du carré visible */
+  width: 200px; 
   height: 200px;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.8); /* masque noir sauf dans le carré */
-  pointer-events: none; /* pour laisser passer les clics si besoin */
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.8); 
+  pointer-events: none; 
   z-index: 10;
-}
+} */
 
 .part.top {
   position: relative;
   z-index: 5;
-  -webkit-mask: radial-gradient(circle, transparent 100px, black 101px);
-  mask: radial-gradient(circle, transparent 100px, black 101px);
-  /* Le cercle de 100px est transparent, tout le reste est visible */
+  /* -webkit-mask: radial-gradient(circle, transparent 100px, black 101px);
+  mask: radial-gradient(circle, transparent 100px, black 101px); */
+  
 }
 
 .background-content {
@@ -404,3 +432,227 @@ footer {
   z-index: -1; /* Place le contenu derrière */
   background-color: #ff7eb3;
 }
+
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-inner {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s ease;
+  height: 100%;
+}
+
+.carousel-item {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.carousel-item img {
+  width: 100%;
+  display: block;
+  height: 100%;
+}
+
+/* --------------------------------------------------------------------------------------- */
+
+.bubbles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 1000px;
+  margin: auto;
+  position: relative;
+}
+
+.bubble svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.bubbles-grid:hover .bubble {
+  opacity: 0;
+}
+
+.bubble:hover {
+  opacity: 1 !important;
+  z-index: 2;
+}
+
+.bubbles-grid,
+.bubble {
+  overflow: visible;
+}
+
+.bubble:hover svg .bubble-background-left {
+  transform: translateX(300px);
+  transition: transform 0.4s ease;
+}
+
+.bubble:hover svg .bubble-background-right {
+  transform: translateX(-300px);
+  transition: transform 0.4s ease;
+}
+
+.txt-bubble-size{
+  font-size: 25px !important;
+}
+
+.txt-bubble-serieux {
+  display: flex;
+  position: absolute; 
+  top: 0px; 
+  left: 60%; 
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+
+.txt-bubble-savoir-faire {
+  display: flex;
+  position: absolute; 
+  top: 0px; 
+  left: 10%; 
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+
+.txt-bubble-bienveillance {
+  display: flex;
+  position: absolute; 
+  top: 50%; 
+  left: 60%; 
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+
+.txt-bubble-prudence {
+  display: flex;
+  position: absolute; 
+  top: 50%; 
+  left: 10%; 
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+
+#bubble-serieux:hover .txt-bubble-serieux,
+#bubble-savoir-faire:hover .txt-bubble-savoir-faire,
+#bubble-bienveillance:hover .txt-bubble-bienveillance,
+#bubble-prudence:hover .txt-bubble-prudence {
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+.txt-bubble-serieux,
+.txt-bubble-savoir-faire,
+.txt-bubble-bienveillance,
+.txt-bubble-prudence {
+  pointer-events: none;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 7));
+  }
+}
+
+.slider {
+  background: white;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.slider::before, .slider::after {
+  background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+  content: "";
+  height: 150px;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
+
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+
+.slider::before {
+  left: 0;
+  top: 0;
+}
+
+.slider .slide-track {
+  animation: scroll 40s linear infinite;
+  display: flex;
+  width: calc(450px * 14);
+  gap: 50px;
+  height: 100%;
+}
+
+.slider .slide {
+  height: 100%;
+  width: 450px;
+  padding: 20px 0%;
+}
+
+.slide img {
+  height: 100%;
+  width: 100%;
+  object-fit: scale-down;
+}
+
+ /* .bubble-background{
+  z-index: 1;
+} */
+
+/*
+.bubble-foreground {
+  position: relative;
+  z-index: -1;
+} */
+
+/* .bubble:hover .bubble-content {
+  opacity: 1;
+  pointer-events: auto;
+} */
+
+/* .bubble-content-l {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  color: black;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 10;
+} */

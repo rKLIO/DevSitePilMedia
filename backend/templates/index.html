@@ -7,12 +7,14 @@
   <title>PILMEDIA - Agence Tech</title>
   <link rel="stylesheet" href="{% static 'css/carousel.css' %}">
   <link rel="stylesheet" href="{% static 'css/profil.css' %}">
-  <link rel="stylesheet" href="{% static 'css/index.css' %}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <!-- Owl Carousel CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
 </head>
 <body>
 
@@ -26,7 +28,8 @@
       <a href="#about">À propos</a>
       <a href="#services">Services</a>
       <a href="#formations">Formations</a>
-      <a href="#projects">Réalisations</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#equipe">Équipe</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -37,19 +40,146 @@
       <source src="media/tech-background.mp4" type="video/mp4" />
     </video> {% endcomment %}
     <div class="hero-content">
-      <h1>Transformez vos idées en solutions digitales</h1>
+      <h1>PILMEDIA</h1>
       <p>Développement sur-mesure, design futuriste & expérience immersive</p>
     </div>
   </section>
 
   <!-- À propos -->
-  <section id="about" class="section">
-    <h2>À propos de PILMEDIA</h2>
-    <p>Une équipe créative et technique à votre service. Spécialistes en développement web, mobile et UX/UI design.</p>
+  <section id="about" class="section" id="about">
+    {% comment %} <p>Une équipe créative et technique à votre service. Spécialistes en développement web, mobile et UX/UI design.</p> {% endcomment %}
+    
+    <div class="disposition_about">
+      <div class="grid_about">  
+        <div class="bubbles-grid">      
+
+          <!-- SVG Haut Gauche -->
+          <div class="bubble" id="bubble-serieux">
+            <svg width="292" height="203" viewBox="0 0 292 203" fill="none" style="overflow: visible;">
+              
+              <g class="bubble-background-left">
+                <path d="M40.9242 120.864C41.0118 75.3784 107.226 12.2389 151.559 12.2389C248.122 12.2389 71.7118 70.0125 261.238 112.259C345.014 130.932 195.999 202.401 151.559 202.305C107.12 202.209 40.8367 166.35 40.9242 120.864Z" fill="url(#paint0_linear_454_335)" fill-opacity="0.3"/>
+              </g>
+              <g class="bubble-frontground">
+                <path d="M0.155983 108.864C0.243531 63.3783 66.4581 0.238858 110.791 0.238858C207.354 0.238858 76.1522 58.0125 265.678 100.259C349.454 118.932 200.439 190.401 156 190.305C111.56 190.209 0.068436 154.35 0.155983 108.864Z" fill="url(#paint1_linear_454_335)"/>
+                <path d="M69.5251 105.678C68.9384 105.678 68.3957 105.532 67.8971 105.238C67.3984 104.945 67.0024 104.549 66.7091 104.05C66.4157 103.552 66.2691 103.009 66.2691 102.422V100.948H69.6791V102.246H78.6551V99.4742H69.5251C68.9384 99.4742 68.3957 99.3276 67.8971 99.0342C67.3984 98.7409 67.0024 98.3522 66.7091 97.8682C66.4157 97.3696 66.2691 96.8196 66.2691 96.2182V93.0942C66.2691 92.4929 66.4157 91.9502 66.7091 91.4662C67.0024 90.9676 67.3984 90.5716 67.8971 90.2782C68.3957 89.9849 68.9384 89.8382 69.5251 89.8382H78.8531C79.4397 89.8382 79.9751 89.9849 80.4591 90.2782C80.9577 90.5716 81.3537 90.9676 81.6471 91.4662C81.9551 91.9502 82.1091 92.4929 82.1091 93.0942V94.5682H78.6551V93.2702H69.6791V96.0422H78.8531C79.4397 96.0422 79.9751 96.1889 80.4591 96.4822C80.9577 96.7756 81.3537 97.1716 81.6471 97.6702C81.9551 98.1542 82.1091 98.6969 82.1091 99.2982V102.422C82.1091 103.009 81.9551 103.552 81.6471 104.05C81.3537 104.549 80.9577 104.945 80.4591 105.238C79.9751 105.532 79.4397 105.678 78.8531 105.678H69.5251ZM84.5758 105.678V89.8382H99.2058V93.2702H88.0298V96.0422H97.0278V99.4742H88.0298V102.246H99.2058V105.678H84.5758ZM113.674 105.678L109.076 100.2H113.542L117.194 104.512V105.678H113.674ZM101.376 105.678V89.8602H113.938C114.539 89.8602 115.082 90.0069 115.566 90.3002C116.064 90.5936 116.46 90.9896 116.754 91.4882C117.062 91.9869 117.216 92.5296 117.216 93.1162V97.2082C117.216 97.7949 117.062 98.3376 116.754 98.8362C116.46 99.3349 116.064 99.7309 115.566 100.024C115.082 100.318 114.539 100.464 113.938 100.464L104.786 100.486V105.678H101.376ZM104.786 97.0322H113.762V93.2702H104.786V97.0322ZM118.98 105.678V89.8382H122.346V105.678H118.98ZM124.279 105.678V89.8382H138.909V93.2702H127.733V96.0422H136.731V99.4742H127.733V102.246H138.909V105.678H124.279ZM144.291 105.678C143.704 105.678 143.161 105.532 142.663 105.238C142.164 104.945 141.768 104.549 141.475 104.05C141.181 103.552 141.035 103.009 141.035 102.422V89.8382H144.445V102.246H153.421V89.8382H156.875V102.422C156.875 103.009 156.721 103.552 156.413 104.05C156.119 104.549 155.723 104.945 155.225 105.238C154.741 105.532 154.205 105.678 153.619 105.678H144.291ZM159.077 105.678V104.512L164.731 97.7582L159.077 91.0042V89.8382H162.619L167.019 95.0522L171.375 89.8382H174.917V91.0042L169.241 97.7582L174.917 104.49V105.678H171.375L166.975 100.486L162.619 105.678H159.077Z" fill="white"/>
+              </g>  
+              <defs>
+                <linearGradient id="paint0_linear_454_335" x1="163.853" y1="12.2649" x2="163.443" y2="202.33" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#035EDD"/>
+                  <stop offset="1" stop-color="#058CF8"/>
+                </linearGradient>
+                <linearGradient id="paint1_linear_454_335" x1="145.689" y1="0.313609" x2="145.279" y2="190.282" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#035EDD"/>
+                  <stop offset="1" stop-color="#058CF8"/>
+                </linearGradient>
+                </defs>
+              </svg>
+              <div class="txt-bubble-serieux"> 
+                <p class="txt-bubble-size">Énergie mobilisée pour tendre vers l'execellence</p>
+              </div>
+          </div>
+          
+          <!-- SVG Haut Droite -->
+          <div class="bubble" id="bubble-savoir-faire">
+            <svg width="395" height="312" viewBox="0 0 395 312" fill="none" style="overflow: visible;">
+              <g class="bubble-background-right">
+                <path d="M395 145.764C395 215.222 290.657 312 220.384 312C149.658 288.586 403.67 227.707 30.0893 159.547C-60.6026 111.716 197.488 20 267.761 20C338.033 20 395 76.3065 395 145.764Z" fill="url(#paint0_linear_452_168)" fill-opacity="0.3"/>
+              </g>
+              <g class="bubble-frontground">
+                <path d="M394.938 125.764C394.938 195.222 279.006 292 208.733 292C138.007 268.586 392.019 207.707 18.4383 139.547C-72.2537 91.7165 197.427 0 267.699 0C337.971 0 394.938 56.3065 394.938 125.764Z" fill="url(#paint1_linear_452_168)"/>
+                <path d="M152.389 110C151.803 110 151.26 109.853 150.761 109.56C150.263 109.267 149.867 108.871 149.573 108.372C149.28 107.873 149.133 107.331 149.133 106.744V105.27H152.543V106.568H161.519V103.796H152.389C151.803 103.796 151.26 103.649 150.761 103.356C150.263 103.063 149.867 102.674 149.573 102.19C149.28 101.691 149.133 101.141 149.133 100.54V97.416C149.133 96.8147 149.28 96.272 149.573 95.788C149.867 95.2893 150.263 94.8933 150.761 94.6C151.26 94.3067 151.803 94.16 152.389 94.16H161.717C162.304 94.16 162.839 94.3067 163.323 94.6C163.822 94.8933 164.218 95.2893 164.511 95.788C164.819 96.272 164.973 96.8147 164.973 97.416V98.89H161.519V97.592H152.543V100.364H161.717C162.304 100.364 162.839 100.511 163.323 100.804C163.822 101.097 164.218 101.493 164.511 101.992C164.819 102.476 164.973 103.019 164.973 103.62V106.744C164.973 107.331 164.819 107.873 164.511 108.372C164.218 108.871 163.822 109.267 163.323 109.56C162.839 109.853 162.304 110 161.717 110H152.389ZM167.44 110V97.416C167.44 96.8147 167.587 96.272 167.88 95.788C168.173 95.2893 168.569 94.8933 169.068 94.6C169.567 94.3067 170.109 94.16 170.696 94.16H180.002C180.603 94.16 181.146 94.3067 181.63 94.6C182.129 94.8933 182.525 95.2893 182.818 95.788C183.126 96.272 183.28 96.8147 183.28 97.416V110H179.826V104.896H170.85V110H167.44ZM170.85 101.464H179.826V97.592H170.85V101.464ZM194.499 110L185.325 94.16H189.285L195.929 105.666L202.573 94.16H206.511L197.337 110H194.499ZM211.063 110C210.476 110 209.934 109.853 209.435 109.56C208.936 109.267 208.54 108.871 208.247 108.372C207.954 107.873 207.807 107.331 207.807 106.744V97.416C207.807 96.8147 207.954 96.272 208.247 95.788C208.54 95.2893 208.936 94.8933 209.435 94.6C209.934 94.3067 210.476 94.16 211.063 94.16H220.391C220.978 94.16 221.513 94.3067 221.997 94.6C222.496 94.8933 222.892 95.2893 223.185 95.788C223.493 96.272 223.647 96.8147 223.647 97.416V106.744C223.647 107.331 223.493 107.873 223.185 108.372C222.892 108.871 222.496 109.267 221.997 109.56C221.513 109.853 220.978 110 220.391 110H211.063ZM211.217 106.568H220.193V97.592H211.217V106.568ZM225.52 110V94.16H228.886V110H225.52ZM243.073 110L238.475 104.522H242.941L246.593 108.834V110H243.073ZM230.775 110V94.182H243.337C243.938 94.182 244.481 94.3287 244.965 94.622C245.464 94.9153 245.86 95.3113 246.153 95.81C246.461 96.3087 246.615 96.8513 246.615 97.438V101.53C246.615 102.117 246.461 102.659 246.153 103.158C245.86 103.657 245.464 104.053 244.965 104.346C244.481 104.639 243.938 104.786 243.337 104.786L234.185 104.808V110H230.775ZM234.185 101.354H243.161V97.592H234.185V101.354ZM248.995 105.182V101.816H258.169V105.182H248.995ZM260.339 110V94.16H274.969V97.592H263.793V100.364H272.791V103.796H263.793V110H260.339ZM276.237 110V97.416C276.237 96.8147 276.384 96.272 276.677 95.788C276.97 95.2893 277.366 94.8933 277.865 94.6C278.364 94.3067 278.906 94.16 279.493 94.16H288.799C289.4 94.16 289.943 94.3067 290.427 94.6C290.926 94.8933 291.322 95.2893 291.615 95.788C291.923 96.272 292.077 96.8147 292.077 97.416V110H288.623V104.896H279.647V110H276.237ZM279.647 101.464H288.623V97.592H279.647V101.464ZM294.034 110V94.16H297.4V110H294.034ZM311.587 110L306.989 104.522H311.455L315.107 108.834V110H311.587ZM299.289 110V94.182H311.851C312.452 94.182 312.995 94.3287 313.479 94.622C313.977 94.9153 314.373 95.3113 314.667 95.81C314.975 96.3087 315.129 96.8513 315.129 97.438V101.53C315.129 102.117 314.975 102.659 314.667 103.158C314.373 103.657 313.977 104.053 313.479 104.346C312.995 104.639 312.452 104.786 311.851 104.786L302.699 104.808V110H299.289ZM302.699 101.354H311.675V97.592H302.699V101.354ZM317.487 110V94.16H332.117V97.592H320.941V100.364H329.939V103.796H320.941V106.568H332.117V110H317.487Z" fill="white"/>
+              </g>
+              <defs>
+                <linearGradient id="paint0_linear_452_168" x1="203" y1="20" x2="203" y2="312" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#1CB1BD"/>
+                  <stop offset="1" stop-color="#2F9AC5"/>
+                </linearGradient>
+                <linearGradient id="paint1_linear_452_168" x1="197.469" y1="0" x2="197.469" y2="292" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#1CB1BD"/>
+                  <stop offset="1" stop-color="#2F9AC5"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <div class="txt-bubble-savoir-faire"> 
+              <p class="txt-bubble-size">Fruit de la compréhension et de l'appropriation</p>
+            </div>
+          </div>
+          
+          <!-- SVG Bas Gauche -->
+          <div class="bubble" id="bubble-bienveillance">
+            <svg width="362" height="274" viewBox="0 0 362 274" fill="none" style="overflow: visible;">
+              <g class="bubble-background-left">
+                <path d="M343.256 109.421C321.219 154.629 264.292 294.202 217.676 241.987C127.351 140.815 128.247 209.732 89.3798 159.443C28.875 81.1582 194.128 48.8631 245.136 32.3277C343.255 0.520122 390.644 12.2057 343.256 109.421Z" fill="url(#paint0_linear_452_224)" fill-opacity="0.3"/>
+              </g>
+              <g class="bubble-frontground">
+                <path d="M317.245 102.409C292.807 151.94 207.564 318.726 155.864 261.515C55.6906 150.663 56.6863 226.172 13.5807 171.072C-53.5219 85.2982 151.858 36.0547 208.426 17.9392C317.242 -16.9078 369.797 -4.1032 317.245 102.409Z" fill="url(#paint1_linear_452_224)"/>
+                <path d="M66.9533 135V119.16H78.9213C79.5079 119.16 80.0433 119.307 80.5273 119.6C81.0259 119.893 81.4219 120.289 81.7153 120.788C82.0233 121.272 82.1773 121.815 82.1773 122.416V125.386C82.1773 125.577 82.1626 125.76 82.1333 125.936C82.1186 126.097 82.0819 126.251 82.0233 126.398C82.2433 126.677 82.4266 126.999 82.5733 127.366C82.7199 127.733 82.7933 128.099 82.7933 128.466V131.744C82.7933 132.331 82.6393 132.873 82.3313 133.372C82.0379 133.871 81.6419 134.267 81.1433 134.56C80.6593 134.853 80.1166 135 79.5153 135H66.9533ZM70.3633 131.568H79.3393V128.664H70.3633V131.568ZM70.3633 125.232H78.7233V122.592H70.3633V125.232ZM84.642 135V119.16H88.008V135H84.642ZM89.941 135V119.16H104.571V122.592H93.395V125.364H102.393V128.796H93.395V131.568H104.571V135H89.941ZM106.741 135V119.16H110.261L119.127 129.72V119.16H122.581V135H119.061L110.151 124.396V135H106.741ZM133.757 135L124.583 119.16H128.543L135.187 130.666L141.831 119.16H145.769L136.595 135H133.757ZM147.154 135V119.16H161.784V122.592H150.608V125.364H159.606V128.796H150.608V131.568H161.784V135H147.154ZM163.404 135V119.16H166.77V135H163.404ZM168.681 135V119.138H172.091V131.568H184.521V135H168.681ZM185.825 135V119.138H189.235V131.568H201.665V135H185.825ZM202.992 135V122.416C202.992 121.815 203.138 121.272 203.432 120.788C203.725 120.289 204.121 119.893 204.62 119.6C205.118 119.307 205.661 119.16 206.248 119.16H215.554C216.155 119.16 216.698 119.307 217.182 119.6C217.68 119.893 218.076 120.289 218.37 120.788C218.678 121.272 218.832 121.815 218.832 122.416V135H215.378V129.896H206.402V135H202.992ZM206.402 126.464H215.378V122.592H206.402V126.464ZM221.338 135V119.16H224.858L233.724 129.72V119.16H237.178V135H233.658L224.748 124.396V135H221.338ZM242.899 135C242.298 135 241.748 134.853 241.249 134.56C240.765 134.267 240.376 133.878 240.083 133.394C239.79 132.895 239.643 132.345 239.643 131.744V122.416C239.643 121.815 239.79 121.272 240.083 120.788C240.376 120.289 240.765 119.893 241.249 119.6C241.748 119.307 242.298 119.16 242.899 119.16H255.439V122.592H243.779C243.544 122.592 243.361 122.651 243.229 122.768C243.112 122.885 243.053 123.069 243.053 123.318V130.842C243.053 131.077 243.112 131.26 243.229 131.392C243.361 131.509 243.544 131.568 243.779 131.568H255.439V135H242.899ZM257.777 135V119.16H272.407V122.592H261.231V125.364H270.229V128.796H261.231V131.568H272.407V135H257.777Z" fill="white"/>
+              </g>  
+                <defs>
+                  <linearGradient id="paint0_linear_452_224" x1="219.151" y1="16.3079" x2="218.639" y2="253.465" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#1CB1BD"/>
+                    <stop offset="1" stop-color="#2F9AC5"/>
+                  </linearGradient>
+                  <linearGradient id="paint1_linear_452_224" x1="169.192" y1="0.363936" x2="168.603" y2="273.291" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#3099C5"/>
+                    <stop offset="1" stop-color="#12BDB9"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <div class="txt-bubble-bienveillance"> 
+                <p class="txt-bubble-size">Étendue à tous, sans discrimination</p>
+              </div>
+            {% comment %} <div class="bubble-content-l">
+              <h3>Développement</h3>
+              <p>Web & Mobile</p>
+              <ul>
+                <li>Symfony</li>
+                <li>Mobile apps</li>
+              </ul>
+            </div> {% endcomment %}
+          </div>
+          
+          <!-- SVG Bas Droite -->
+          <div class="bubble" id="bubble-prudence">
+            <svg width="262" height="219" viewBox="0 0 262 219" fill="none" style="overflow: visible;">
+              <g class="bubble-background-right">
+                <path d="M46.4023 59.3055C70.1143 38.6805 146.988 13.9068 178.432 14.0002C209.601 14.0929 231.006 18.6373 254 39.6523C278.934 62.4399 233.976 106.054 230.296 139.608C226.957 170.052 217.375 194.096 189.348 206.526C157.519 220.642 137.828 174.546 103.729 181.617C77.6707 187.021 72.802 221.794 46.4023 218.422C11.0706 213.91 8.91471 170.321 10.2936 134.775C11.5598 102.135 21.7384 80.7586 46.4023 59.3055Z" fill="url(#paint0_linear_456_375)" fill-opacity="0.3"/>
+              </g>
+              <g class="bubble-frontground">
+                <path d="M36.4023 45.3055C60.1143 24.6805 136.988 -0.0931981 168.432 0.000248301C199.601 0.0928762 221.006 4.63728 244 25.6523C268.934 48.4399 223.976 92.0542 220.296 125.608C216.957 156.052 207.375 180.096 179.348 192.526C147.519 206.642 127.828 160.546 93.7295 167.617C67.6707 173.021 62.802 207.794 36.4023 204.422C1.07058 199.91 -1.08529 156.321 0.293606 120.775C1.55975 88.1349 11.7384 66.7586 36.4023 45.3055Z" fill="url(#paint1_linear_456_375)"/>
+                <path d="M56.6295 102V86.182H69.1915C69.7928 86.182 70.3355 86.3287 70.8195 86.622C71.3181 86.9153 71.7141 87.3113 72.0075 87.81C72.3155 88.3087 72.4695 88.8513 72.4695 89.438V93.53C72.4695 94.1167 72.3155 94.6593 72.0075 95.158C71.7141 95.6567 71.3181 96.0527 70.8195 96.346C70.3355 96.6393 69.7928 96.786 69.1915 96.786L60.0395 96.808V102H56.6295ZM60.0395 93.354H69.0155V89.592H60.0395V93.354ZM86.3298 102L81.7318 96.522H86.1978L89.8498 100.834V102H86.3298ZM74.0318 102V86.182H86.5938C87.1951 86.182 87.7378 86.3287 88.2218 86.622C88.7205 86.9153 89.1165 87.3113 89.4098 87.81C89.7178 88.3087 89.8718 88.8513 89.8718 89.438V93.53C89.8718 94.1167 89.7178 94.6593 89.4098 95.158C89.1165 95.6567 88.7205 96.0527 88.2218 96.346C87.7378 96.6393 87.1951 96.786 86.5938 96.786L77.4418 96.808V102H74.0318ZM77.4418 93.354H86.4178V89.592H77.4418V93.354ZM95.3981 102C94.8114 102 94.2688 101.853 93.7701 101.56C93.2714 101.267 92.8754 100.871 92.5821 100.372C92.2888 99.8733 92.1421 99.3307 92.1421 98.744V86.16H95.5521V98.568H104.528V86.16H107.982V98.744C107.982 99.3307 107.828 99.8733 107.52 100.372C107.227 100.871 106.831 101.267 106.332 101.56C105.848 101.853 105.313 102 104.726 102H95.3981ZM110.449 102V86.16H123.011C123.612 86.16 124.155 86.3067 124.639 86.6C125.138 86.8933 125.534 87.2893 125.827 87.788C126.135 88.272 126.289 88.8147 126.289 89.416V98.744C126.289 99.3307 126.135 99.8733 125.827 100.372C125.534 100.871 125.138 101.267 124.639 101.56C124.155 101.853 123.612 102 123.011 102H110.449ZM113.837 98.568H122.835V89.592H113.837V98.568ZM128.797 102V86.16H143.427V89.592H132.251V92.364H141.249V95.796H132.251V98.568H143.427V102H128.797ZM145.596 102V86.16H149.116L157.982 96.72V86.16H161.436V102H157.916L149.006 91.396V102H145.596ZM167.157 102C166.556 102 166.006 101.853 165.507 101.56C165.023 101.267 164.634 100.878 164.341 100.394C164.048 99.8953 163.901 99.3453 163.901 98.744V89.416C163.901 88.8147 164.048 88.272 164.341 87.788C164.634 87.2893 165.023 86.8933 165.507 86.6C166.006 86.3067 166.556 86.16 167.157 86.16H179.697V89.592H168.037C167.802 89.592 167.619 89.6507 167.487 89.768C167.37 89.8853 167.311 90.0687 167.311 90.318V97.842C167.311 98.0767 167.37 98.26 167.487 98.392C167.619 98.5093 167.802 98.568 168.037 98.568H179.697V102H167.157ZM182.035 102V86.16H196.665V89.592H185.489V92.364H194.487V95.796H185.489V98.568H196.665V102H182.035Z" fill="white"/>
+              </g>
+              <defs>
+                <linearGradient id="paint0_linear_456_375" x1="135.747" y1="14" x2="135.747" y2="218.652" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#058BF8"/>
+                  <stop offset="1" stop-color="#2141AA"/>
+                </linearGradient>
+                <linearGradient id="paint1_linear_456_375" x1="125.747" y1="0" x2="125.747" y2="204.652" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#058BF8"/>
+                  <stop offset="1" stop-color="#2141AA"/>
+                </linearGradient>
+              </defs>
+              </svg>
+              <div class="txt-bubble-prudence"> 
+                <p class="txt-bubble-size">Équilibre, lucidité, adaptabilité</p>
+              </div>
+          </div> 
+        </div>
+        <!-- Texte à propos -->
+        <div>
+          <h2>PILMEDIA</h2>
+          <p style="text-align: center; padding: 0 30px">Fondée par Willy Laurencine, PILMEDIA est une entreprise spécialisée dans le développement d’applications sur mesure. Alliant expertise technique et créativité, nous concevons des solutions web et mobiles pensées pour durer, performantes, et adaptées à chaque besoin.
+            Née d’une passion pour le digital intelligent, PILMEDIA rassemble une équipe engagée, où chaque projet est porté avec sérieux, écoute et attention. De l’idée à la mise en ligne, nous privilégions une approche humaine, agile et sur-mesure. <br/>
+            <br/>
+            🎯 Chez PILMEDIA, on ne code pas juste pour créer. On code pour améliorer, sécuriser et inspirer. Notre force repose sur quatre piliers : le savoir-faire, la bienveillance, le sérieux et la prudence.</p>
+        </div>
+      </div>
+    </div>      
   </section>
 
   <!-- Services -->
-  <section class="section">
+  {% comment %} <section class="section">
     <h2>Nos Services</h2>
     <div class="grid">
       <div class="card">Développement Web</div>
@@ -57,23 +187,68 @@
       <div class="card">Design UI/UX</div>
       <div class="card">Consulting & Audit</div>
     </div>
-  </section>
+  </section> {% endcomment %}
 
+  <!-- Services -->
   <section class="section" id="services">
-    {% comment %} <h2>Nos Services</h2> {% endcomment %}
-    <div class="layer-container">
-      <!-- Couche de fond -->
-      <div class="background-layer">
-        <p>Contenu derrière</p>
-      </div>
-      <!-- Couche au-dessus -->
-      <div class="foreground-layer">
-        <div class="ordi_container">
+    <h2 style="margin-bottom: 0px; margin-top: 60px;">Nos Services</h2>
+    
+    <div class="disposition_services">  
+      
+      {% comment %} <div class="layer-container"> {% endcomment %}
+        <!-- Couche de fond -->
+        {% comment %} <div class="background-layer"> {% endcomment %}
+          {% comment %} <p>Contenu derrière</p> {% endcomment %}
+        {% comment %} </div> {% endcomment %}
+        <!-- Couche au-dessus -->
+        {% comment %} <div class="foreground-layer">
+          <div style="position:relative;"> {% endcomment %}
+
+      <div class="grid_ordi">
+
+        <div id="txt_services">
+          
+          <div id="changing-text">
+            <h2>Lorem Ipsum</h2>
+              <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>              
+          </div>
+          
+          <div id="hidden-texts" style="display: none;">  
+            <div>
+              <h2>Lorem Ipsum</h2>
+              <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+            </div>
+            <div>
+              <h2>Lorem Ipsum</h2>
+              <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+            </div>
+          </div>      
+        </div>
+
+        <div class="ordi_container" id="ordi_services">
           <div class="mockup mockup-macbook">
             <div class="part top">
               <img src="https://d1xm195wioio0k.cloudfront.net/images/mockup/macbook-top.svg" alt="" class="top">
               <img src="https://d1xm195wioio0k.cloudfront.net/images/mockup/macbook-cover.svg" alt="" class="cover">
-              <div class="background-content">Contenu derrière</div>
+              <div id="carouselExample" class="img-laptop">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="static\image\Hello Anime !  (74).jpg" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="static\image\What-episode-does-One-Piece-animation-change-3-e1668439233122.jpeg" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="image3.jpg" alt="Third slide">
+                    </div>
+                  </div>
+              </div>
+                                  
+              {% comment %} </div>  {% endcomment %}
+
             </div>
             <div class="part bottom">
               <img src="https://d1xm195wioio0k.cloudfront.net/images/mockup/macbook-cover.svg" alt="" class="cover">
@@ -82,7 +257,9 @@
           </div>
         </div>
       </div>
-    </div>
+      {% comment %} </div>
+      </div>  {% endcomment %}
+    </div>  
   </section>
 
   <!-- Formations -->
@@ -96,47 +273,105 @@
   </section>
 
   <!-- Equipe -->
-  <section class="section">
+  <section class="section" id="equipe">
     <h2>Notre Équipe</h2>
     <div class="formations-grid">
+      
+      <!-- Willy Laurencine -->
       <div class="p_person">
         <div class="p_container">
           <div class="p_container-inner">
             <img class="p_circle" src="" />
-            <img class="p_img img1" src="static\image\Damien Duclos.png"/>
-          </div>
-        </div>
-        <div class="p_divider"></div>
-        <div class="p_name">Damien Duclos</div>
-        <div class="p_title">Chef de projet</div>
-      </div>
-      <div class="p_person">
-        <div class="p_container">
-          <div class="p_container-inner">
-            <img class="p_circle" src="" />
-            <img class="p_img img2" src="static\image\Damien Oliny.png" />
-          </div>
-        </div>
-        <div class="p_divider"></div>
-        <div class="p_name">Damien Oliny</div>
-        <div class="p_title">Developpeur Full-Stack</div>
-      </div>
-      <div class="p_person">
-        <div class="p_container">
-          <div class="p_container-inner">
-            <img class="p_circle" src="" />
-            <img class="p_img img3" src="static\image\Willy Laurencine.png" />
+            <img class="p_img img3" src="static\image\profil\Willy Laurencine.png" />
           </div>
         </div>
         <div class="p_divider"></div>
         <div class="p_name">Willy Laurencine</div>
         <div class="p_title">Senior UX</div>
       </div>
+
+      <!-- Damien Duclos -->
+      <div class="p_person">
+        <div class="p_container">
+          <div class="p_container-inner">
+            <img class="p_circle" src="" />
+            <img class="p_img img1" src="static\image\profil\Damien Duclos.png"/>
+          </div>
+        </div>
+        <div class="p_divider"></div>
+        <div class="p_name">Damien Duclos</div>
+        <div class="p_title">Chef de projet</div>
+      </div>
+      
+      <!-- Damien Oliny -->
+      <div class="p_person">
+        <div class="p_container">
+          <div class="p_container-inner">
+            <img class="p_circle" src="" />
+            <img class="p_img img2" src="static\image\profil\Damien Oliny.png" />
+          </div>
+        </div>
+        <div class="p_divider"></div>
+        <div class="p_name">Damien Oliny</div>
+        <div class="p_title">Developpeur Full-Stack</div>
+      </div>
+
+      <!-- Max Morawski -->
+      <div class="p_person">
+        <div class="p_container">
+          <div class="p_container-inner">
+            <img class="p_circle" src="" />
+            <img class="p_img img3" src="static\image\profil\Max Morawski.png" />
+          </div>
+        </div>
+        <div class="p_divider"></div>
+        <div class="p_name">Max Morawski</div>
+        <div class="p_title">Developpeur Full-Stack</div>
+      </div>
+
+      <!-- Patrice Lorto -->
+      <div class="p_person">
+        <div class="p_container">
+          <div class="p_container-inner">
+            <img class="p_circle" src="" />
+            <img class="p_img img3" src="static\image\profil\patrice lorto(portrait) (2).png" />
+          </div>
+        </div>
+        <div class="p_divider"></div>
+        <div class="p_name">Patrice Lorto</div>
+        <div class="p_title">Senior UX</div>
+      </div>
+
+      <!-- Carole Magellan -->
+      <div class="p_person">
+        <div class="p_container">
+          <div class="p_container-inner">
+            <img class="p_circle" src="" />
+            <img class="p_img img3" src="static\image\profil\Carole Magellan (portrait).png" />
+          </div>
+        </div>
+        <div class="p_divider"></div>
+        <div class="p_name">Carole Magellan</div>
+        <div class="p_title">Senior UX</div>
+      </div>
+
+      <!-- Philippe Celestin -->
+      <div class="p_person">
+        <div class="p_container">
+          <div class="p_container-inner">
+            <img class="p_circle" src="" />
+            <img class="p_img img3" src="static\image\profil\Philippe celestin (2).png" />
+          </div>
+        </div>
+        <div class="p_divider"></div>
+        <div class="p_name">Phillippe Celestin</div>
+        <div class="p_title">Senior UX</div>
+      </div>
     </div>
   </section>
 
   <!-- Réalisations Carousel -->
-  <section class="game-section">
+  <section class="game-section" id="realisations">
     <h2 class="line-title">Nos Réalisations</h2>
     <div class="owl-carousel custom-carousel owl-theme">
       <div class="item active" style="background-image: url(https://images.bfmtv.com/S8MzFfgGL254Vn4u7blzLq2gAHo=/5x1:741x415/736x0/images/La-serie-animee-One-Piece-1955664.jpg);">
@@ -198,6 +433,95 @@
     </form>
   </section>
 
+  <!-- Collaborateurs -->
+  <section>
+    <div class="slider">
+      <div class="slide-track">
+        <div class="slide">
+          <img src="static\image\collaborateur\Canal +(collaborateur).png" height="100" width="250" alt=""/>
+        </div>
+        <div class="slide">
+          <img src="static\image\collaborateur\CANBT (collaborateur).png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="static\image\collaborateur\chu (collaborateur).png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="static\image\collaborateur\city'up (collaborateur).png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="static\image\collaborateur\Ctm (collaborateur).png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="static\image\collaborateur\Digicel ( collaborateur).png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="static\image\collaborateur\espace sud (collaborateur).png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="static\image\collaborateur\euroscore (collaborateur).png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="static\image\collaborateur\gfa ( collaborateur ).png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="static\image\collaborateur\guyane ODC (collaborateur).png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="static\image\collaborateur\INRAE ( collaborateur ).png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="static\image\collaborateur\le logis Saint-jean (collaborateur).webp" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="static\image\collaborateur\Logo.png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="static\image\collaborateur\Madinina Bikers (collaborateur) (2).png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="static\image\collaborateur\Mission locale (collaborateur).png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="static\image\collaborateur\Mservir (collaborateur).png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="static\image\collaborateur\NHS (collaborateur ).png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="static\image\collaborateur\Rentokil Initial (collaborateur).png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="static\image\collaborateur\RTM (collaorateur).png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="static\image\collaborateur\semsamar (collaborateur).png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="static\image\collaborateur\SNTA (collaborateur).png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="static\image\collaborateur\soame (collaborateur).png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="static\image\collaborateur\sud lib (collaboarteurs).png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="static\image\collaborateur\unitC (collaborateur).png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="static\image\collaborateur\université des antilles (collaborateur).png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="static\image\collaborateur\ville du robert (collaborateur).png" height="100" width="250" alt="" />
+        </div>
+        <div class="slide">
+          <img src="static\image\collaborateur\ville du vauclin (collaborateur).png" height="100" width="250" alt="" />
+        </div>
+      </div>
+    </div>
+  </section>  
+
   <!-- Footer avec géolocalisation -->
   <footer>
     <div id="map"></div>
@@ -211,10 +535,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
   <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 
-  
-    <script src="{% static 'js/index.js' %}"></script>
+    
+  <script src="{% static 'js/index.js' %}"></script>
 
 </body>
 </html>
