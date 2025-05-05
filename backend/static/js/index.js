@@ -111,4 +111,3 @@ document.addEventListener('DOMContentLoaded', () => {
     nav.classList.toggle('open'); // Ajoute ou enlève la classe "open"
   });
 });
-
