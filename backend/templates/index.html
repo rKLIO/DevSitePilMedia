@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PILMEDIA - Agence Tech</title>
+  <title>PIL-MEDIA - Agence Tech</title>
   <link rel="stylesheet" href="{% static 'css/carousel.css' %}">
   <link rel="stylesheet" href="{% static 'css/profil.css' %}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,8 +30,13 @@
       <a href="#formations">Formations</a>
       <a href="#realisations">Réalisations</a>
       <a href="#equipe">Équipe</a>
-      <a href="#contact">Contact</a>
+      <a href="#avis">Avis</a>
     </nav>
+
+    <!-- Bouton pour ouvrir le menu -->
+    <button class="menu-toggle" aria-label="Menu">
+      ☰
+    </button>
   </header>
 
   <!-- Hero Section -->
@@ -40,7 +45,7 @@
       <source src="media/tech-background.mp4" type="video/mp4" />
     </video> {% endcomment %}
     <div class="hero-content">
-      <h1>PILMEDIA</h1>
+      <h1>PIL-MEDIA</h1>
       <p>Développement sur-mesure, design futuriste & expérience immersive</p>
     </div>
   </section>
@@ -168,11 +173,11 @@
         </div>
         <!-- Texte à propos -->
         <div>
-          <h2>PILMEDIA</h2>
-          <p style="text-align: center; padding: 0 30px">Fondée par Willy Laurencine, PILMEDIA est une entreprise spécialisée dans le développement d’applications sur mesure. Alliant expertise technique et créativité, nous concevons des solutions web et mobiles pensées pour durer, performantes, et adaptées à chaque besoin.
-            Née d’une passion pour le digital intelligent, PILMEDIA rassemble une équipe engagée, où chaque projet est porté avec sérieux, écoute et attention. De l’idée à la mise en ligne, nous privilégions une approche humaine, agile et sur-mesure. <br/>
+          <h2>PIL-MEDIA</h2>
+          <p style="text-align: center; padding: 0 30px">Fondée par Willy Laurencine, PIL-MEDIA est une entreprise spécialisée dans le développement d’applications sur mesure. Alliant expertise technique et créativité, nous concevons des solutions web et mobiles pensées pour durer, performantes, et adaptées à chaque besoin.
+            Née d’une passion pour le digital intelligent, PIL-MEDIA rassemble une équipe engagée, où chaque projet est porté avec sérieux, écoute et attention. De l’idée à la mise en ligne, nous privilégions une approche humaine, agile et sur-mesure. <br/>
             <br/>
-            🎯 Chez PILMEDIA, on ne code pas juste pour créer. On code pour améliorer, sécuriser et inspirer. Notre force repose sur quatre piliers : le savoir-faire, la bienveillance, le sérieux et la prudence.</p>
+            🎯 Chez PIL-MEDIA, on ne code pas juste pour créer. On code pour améliorer, sécuriser et inspirer. Notre force repose sur quatre piliers : le savoir-faire, la bienveillance, le sérieux et la prudence.</p>
         </div>
       </div>
     </div>      
@@ -420,8 +425,8 @@
   </section>
 
 
-  <!-- Contact -->
-  <section id="contact" class="section" style="height: 70vh; position: relative;">
+  <!-- Avis -->
+  <section id="avis" class="section" style="height: 70vh; position: relative;">
     {% comment %} <h2>Contact</h2>
     <form>
       <input type="text" placeholder="Nom" required />
@@ -436,8 +441,10 @@
       <img src="static\image\photo__de_groupe_7_personne-removebg-preview 1.png" alt="" style="width: 100%; height: 100%; object-fit: scale down;"/>
     </div> {% endcomment %}
     
+    <h2 class="h2-425">Partager votre experience</h2>
+
     <div class="commentary-divider" id="commentary" style="z-index: 1;">
-      <div class="card-comment-container">
+      <div class="card-comment-container" id="div-comment-container">
         <div class="card-comment">
           <div class="name-card-comment">Alice</div>
           <div class="comment-card-comment">Très bon travail !</div>
@@ -480,8 +487,8 @@
           <div class="comment-card-comment">J'aime beaucoup cette idée.</div>
         </div>
       </div>
-      <div>
-        <h2>Partager votre experience</h2>
+      <div id="div-comment-form">
+        <h2 class="h2-base">Partager votre experience</h2>
         <form action="" method="get" class="form-example">
           <div>
             <input type="text" name="name" id="name" placeholder="Nom de l'entreprise" class="commentary-input" required />
@@ -683,7 +690,7 @@
         title="Carte de localisation de PIL-média">
       </iframe>
     </div>
-    <p>&copy; 2025 PILMEDIA - Tous droits réservés.</p>
+    <p>&copy; 2025 PIL-MEDIA - Tous droits réservés.</p>
   </footer>
 
   <!-- jQuery -->

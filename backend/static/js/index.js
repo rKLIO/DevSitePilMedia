@@ -103,3 +103,12 @@ window.addEventListener("load", () => {
   }
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.nav');
+
+  menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('open'); // Ajoute ou enlève la classe "open"
+  });
+});
+
