@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
+    'tailwind',
+    'theme',
 ]
 
 MIDDLEWARE = [
@@ -128,3 +130,7 @@ TEMPLATES[0]['DIRS'] = [os.path.join(BASE_DIR, 'templates')]
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+
+TAILWIND_APP_NAME = 'theme'
+
+NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"

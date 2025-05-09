@@ -43,7 +43,7 @@ $(document).ready(function () {
       }
     });
   }, {
-    threshold: 0.5 // Quand 50% de la section est visible
+    threshold: 0.2 // Quand 50% de la section est visible
   });
 
   observer.observe(section);
@@ -51,57 +51,57 @@ $(document).ready(function () {
 
 // ----------------------------------------------------------------------------
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
-window.addEventListener("load", () => {
-  const textElement = document.getElementById('changing-text');
-  const hiddenTexts = document.querySelectorAll('#hidden-texts > div');
-  const texts = Array.from(hiddenTexts).map(div => div.innerHTML);
+// window.addEventListener("load", () => {
+//   const textElement = document.getElementById('changing-text');
+//   const hiddenTexts = document.querySelectorAll('#hidden-texts > div');
+//   const texts = Array.from(hiddenTexts).map(div => div.innerHTML);
 
-  let currentIndex = -1; // On garde l'index du texte actuel
+//   let currentIndex = -1; // On garde l'index du texte actuel
 
-  // Timeline spéciale pour l'animation du texte
-  const textTimeline = gsap.timeline({ paused: true });
+//   // Timeline spéciale pour l'animation du texte
+//   const textTimeline = gsap.timeline({ paused: true });
 
-  ScrollTrigger.create({
-    trigger: "#services",
-    start: "top top",
-    end: "+=" + (texts.length * 100) + "%",
-    pin: true,
-    scrub: true,
-    onUpdate: (self) => {
-      let progress = self.progress;
-      let index = Math.floor(progress * texts.length);
-      if (index >= texts.length) index = texts.length - 1;
+//   ScrollTrigger.create({
+//     trigger: "#services",
+//     start: "top top",
+//     end: "+=" + (texts.length * 100) + "%",
+//     pin: true,
+//     scrub: true,
+//     onUpdate: (self) => {
+//       let progress = self.progress;
+//       let index = Math.floor(progress * texts.length);
+//       if (index >= texts.length) index = texts.length - 1;
 
-      if (index !== currentIndex) {
-        currentIndex = index;
+//       if (index !== currentIndex) {
+//         currentIndex = index;
 
-        // Animation en 2 temps : fade out -> changer texte -> fade in
-        textTimeline.clear(); // on vide la timeline pour éviter les accumulations
-        textTimeline
-          .to(textElement, { opacity: 0, duration: 0.3, ease: "power1.out" }) // fade out actuel
-          .add(() => {
-            textElement.innerHTML = texts[index]; // changer le texte
-          })
-          .to(textElement, { opacity: 1, duration: 0.3, ease: "power1.in" }); // fade in nouveau
+//         // Animation en 2 temps : fade out -> changer texte -> fade in
+//         textTimeline.clear(); // on vide la timeline pour éviter les accumulations
+//         textTimeline
+//           .to(textElement, { opacity: 0, duration: 0.3, ease: "power1.out" }) // fade out actuel
+//           .add(() => {
+//             textElement.innerHTML = texts[index]; // changer le texte
+//           })
+//           .to(textElement, { opacity: 1, duration: 0.3, ease: "power1.in" }); // fade in nouveau
           
-        textTimeline.play(0); // rejouer la timeline depuis le début
+//         textTimeline.play(0); // rejouer la timeline depuis le début
 
-        // Synchroniser le carousel avec le texte
-        syncCarouselWithText(index);
-      }
-    }
-  });
+//         // Synchroniser le carousel avec le texte
+//         syncCarouselWithText(index);
+//       }
+//     }
+//   });
 
-  // Fonction pour synchroniser le carousel avec le texte
-  function syncCarouselWithText(index) {
-    const carousel = $('#carouselExample');
-    const items = carousel.find('.carousel-item');
-    items.removeClass('active'); // Supprime la classe active de toutes les slides
-    items.eq(index).addClass('active'); // Ajoute la classe active à la slide correspondante
-  }
-});
+//   // Fonction pour synchroniser le carousel avec le texte
+//   function syncCarouselWithText(index) {
+//     const carousel = $('#carouselExample');
+//     const items = carousel.find('.carousel-item');
+//     items.removeClass('active'); // Supprime la classe active de toutes les slides
+//     items.eq(index).addClass('active'); // Ajoute la classe active à la slide correspondante
+//   }
+// });
 
 document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.querySelector('.menu-toggle');

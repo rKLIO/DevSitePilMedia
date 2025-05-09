@@ -72,31 +72,6 @@ body {
   cursor: pointer;
 }
 
-/* Media query pour les écrans de moins de 425px */
-@media (max-width: 743px) {
-  .nav {
-    position: fixed;
-    top: 0;
-    left: -100%; /* Cache le menu hors de l'écran */
-    height: 100%;
-    width: 250px;
-    background-color: var(--bg);
-    flex-direction: column;
-    gap: 16px;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-    transition: left 0.3s ease;
-  }
-
-  .nav.open {
-    left: 0; /* Affiche le menu */
-  }
-
-  .menu-toggle {
-    display: block; /* Affiche le bouton pour ouvrir le menu */
-  }
-}
-
 /* Hero */
 .hero {
   height: 100vh;
@@ -258,7 +233,7 @@ footer {
 
 #services {
   position: relative;
-  height: 100vh; /* La section prend toute la hauteur de la fenêtre */
+  height: 100vh !important; /* La section prend toute la hauteur de la fenêtre */
   
 }
 
@@ -293,6 +268,11 @@ footer {
   gap: 20px;
 }
 
+.txt_about {
+  text-align: center;
+  padding: 0 30px
+}
+
 #txt_services {
   grid-column : 1;
   padding-right: 100px;
@@ -304,22 +284,6 @@ footer {
   display: flex;
   justify-content: center;
   grid-column : 2
-}
-
-/* Cacher la partie laptop pour les écrans de moins de 1024px */
-@media (max-width: 1260px) {
-  .ordi_container {
-    display: none; /* Cache complètement la partie laptop */
-  }
-
-  .grid_ordi {
-    display: block; /* Affiche la grille en mode bloc */
-  }
-
-  #txt_services {
-    padding-right: 0; /* Enlève le padding droit */
-  }
-
 }
 
 .mockup {
@@ -547,13 +511,6 @@ footer {
   margin-bottom: 2rem;
 }
 
-
-@media (max-width: 882px) {
-  .responsive_valeurs {
-    display: block;
-  }
-}
-
 /* Partie incitation */
 
 .incitation {
@@ -588,25 +545,6 @@ footer {
   border: none;
   font-size: large;
   font-weight: 1000;
-}
-
-@media (max-width: 983px) {
-  .incitation { 
-    padding: 50px 5%;
-  }
-
-  .incitation-txt {
-    font-size: 2rem; 
-  }
-
-  .incitation-div-btn {
-    width: 100%; 
-    height: 60%; 
-  }
-  
-  .incitation-btn {
-    font-size: smaller;
-  }
 }
 
 .carousel {
@@ -689,69 +627,6 @@ footer {
   height: 50%;
 }
 
-@media (max-width: 1290px) {
-  .formations-grid h3 {
-    font-size: 1.5rem; 
-  }
-
-  .formations-grid p {
-    font-size: .75rem; 
-  }
-
-  .formations-img img{
-    width: 40px;
-  }
-}
-
-@media (max-width: 1248px) {
-  .formations-grid {
-    grid-template-columns: repeat(3, 1fr); 
-  }
-
-  #item3 .divider{
-    display: none; 
-  }
-}
-
-@media (max-width: 730px) {
-  .formations-grid {
-    grid-template-columns: repeat(2, 1fr); 
-  }
-
-  #item2 .divider,
-  #item4 .divider{
-    display: none; 
-  }
-
-  #item3 .divider{
-    display: flex; 
-  }
-}
-
-@media (max-width: 435px) {
-  .formations-grid {
-    grid-template-columns: repeat(1, 1fr); 
-  }
-
-  #item2 .divider,
-  #item4 .divider,
-  #item3 .divider,
-  #item1 .divider,
-  #item5 .divider{
-    display: none; 
-  }
-}
-
-@media (max-width: 1024px) {
-  .formations-grid h3 {
-    font-size: 1rem; 
-  }
-
-  .formations-grid p {
-    font-size: .6rem; 
-  }
-}
-
 /* ------------------------------------------------------------------------------------------------------------- */
 
 /* Styles pour le carrousel */
@@ -778,48 +653,6 @@ footer {
   100% {
     transform: translateX(calc((-250px * 27) + (-50px * 27)));
   }
-}
-
-@media (max-width: 882px) {
-  .bubbles-grid {
-    display: none;
-  }
-
-  .grid_about {
-    display: block;
-  }
-
-  .team-grid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 1rem;
-  }
-
-  .p_person{
-    width: 100px;
-  }
-
-  .p_name{
-    font-size: 1rem;
-  }
-
-  .p_container{
-    transform: scale(0.28);
-    height: 212px;
-  }
-
-  .p_title{
-    text-align: center;
-  }
-
-  .nav {
-    font-size: .74rem;
-  }
-
-  .p_divider {
-    width: 100px;
-  }
-
-  
 }
 
 .slider {
@@ -948,15 +781,182 @@ footer {
   display: block;
 }
 
+/* Div contenant "photo cartoon" */
+#photo-cartoon {
+  z-index: 2; /* Assurez-vous que cette valeur est inférieure à celle de .slider */
+  position: absolute;
+  top: 47%; 
+  left: 50%; 
+  width: 50%; 
+  height: 70%; 
+  pointer-events: none; 
+  padding: 0;
+}
+
+@media (max-width: 1340px) {
+  .txt-bubble-size {
+    font-size: 1.2rem !important;
+  }
+}
+
+@media (max-width: 1335px) {
+  #photo-cartoon {
+    top: 49%; 
+  }
+}
+
+@media (max-width: 1290px) {
+  .formations-grid h3 {
+    font-size: 1.5rem; 
+  }
+
+  .formations-grid p {
+    font-size: .75rem; 
+  }
+
+  .formations-img img {
+    width: 40px;
+  }
+}
+
+@media (max-width: 1260px) {
+  .ordi_container {
+    display: none; /* Cache complètement la partie laptop */
+  }
+
+  .grid_ordi {
+    display: block; /* Affiche la grille en mode bloc */
+  }
+
+  #txt_services {
+    padding-right: 0; /* Enlève le padding droit */
+  }
+}
+
+@media (max-width: 1248px) {
+  .formations-grid {
+    grid-template-columns: repeat(3, 1fr); 
+  }
+
+  #item3 .divider {
+    display: none; 
+  }
+}
+
+@media (max-width: 1240px) {
+  .txt-bubble-prudence {
+    left: 0%;
+  }
+}
+
+@media (max-width: 1190px) {
+  #photo-cartoon {
+    top: 51%; 
+  }
+}
+
+@media (max-width: 1024px) {
+  #photo-cartoon {
+    top: 52%; 
+    left: 52%;
+    width: 48%;
+  }
+
+  .txt_about {
+    padding: 0;
+  }
+
+  .formations-grid h3 {
+    font-size: 1rem; 
+  }
+
+  .formations-grid p {
+    font-size: .6rem; 
+  }
+}
+
+@media (max-width: 983px) {
+  .incitation { 
+    padding: 50px 5%;
+  }
+
+  .incitation-txt {
+    font-size: 2rem; 
+  }
+
+  .incitation-div-btn {
+    width: 100%; 
+    height: 60%; 
+  }
+  
+  .incitation-btn {
+    font-size: smaller;
+  }
+}
+
+@media (max-width: 960px) {
+  #photo-cartoon {
+    top: 54%; 
+    left: 53%;
+  }
+}
+
 @media (max-width: 920px) {
   .commentary-divider {
     grid-template-columns: 2fr 1.3fr;
   }
 }
 
-/* À partir de 425px : Inverse l'ordre */
-@media (max-width: 768px) {
+@media (max-width: 882px) {
+  .responsive_valeurs {
+    display: block;
+  }
 
+  .bubbles-grid {
+    display: none;
+  }
+
+  .grid_about {
+    display: block;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .p_person {
+    width: 100px;
+  }
+
+  .p_name {
+    font-size: 1rem;
+  }
+
+  .p_container {
+    transform: scale(0.28);
+    height: 212px;
+  }
+
+  .p_title {
+    text-align: center;
+  }
+
+  .nav {
+    font-size: .74rem;
+  }
+
+  .p_divider {
+    width: 100px;
+  }
+}
+
+@media (max-width: 850px) {
+  #photo-cartoon {
+    top: 55%; 
+  }
+}
+
+@media (max-width: 768px) {
   .h2-425 {
     display: block;
   }
@@ -974,11 +974,11 @@ footer {
     gap: 20px;
   }
   
-  #commentary #div-comment-container{
+  #commentary #div-comment-container {
     order: 1;
   }
 
-  #commentary #div-comment-form{
+  #commentary #div-comment-form {
     order: 2;
   }
 
@@ -986,82 +986,85 @@ footer {
     padding: 0;
   }
 
-  .btn{
+  .btn {
     width: 100%;
   }
 
-  #photo-cartoon{
+  #photo-cartoon {
     display: none;
+  }
+}
+
+@media (max-width: 743px) {
+  .nav {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Cache le menu hors de l'écran */
+    height: 100%;
+    width: 250px;
+    background-color: var(--bg);
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease;
+  }
+
+  .nav.open {
+    left: 0; /* Affiche le menu */
+  }
+
+  .menu-toggle {
+    display: block; /* Affiche le bouton pour ouvrir le menu */
+  }
+}
+
+@media (max-width: 730px) {
+  .formations-grid {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+
+  #item2 .divider,
+  #item4 .divider {
+    display: none; 
+  }
+
+  #item3 .divider {
+    display: flex; 
   }
 }
 
 @media (max-width: 475px) {
   .team-grid {
-      grid-template-columns: repeat(2, minmax(120px, 1fr));
-      gap: 1rem;
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+  }
+}
+
+@media (max-width: 435px) {
+  .formations-grid {
+    grid-template-columns: repeat(1, 1fr); 
+  }
+
+  #item2 .divider,
+  #item4 .divider,
+  #item3 .divider,
+  #item1 .divider,
+  #item5 .divider {
+    display: none; 
   }
 }
 
 @media (max-width: 374px) {
   .team-grid {
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   }
 }
 
-@media (max-width: 1340px) {
-  .txt-bubble-size {
-  font-size: 1.2rem !important;
+@media (max-height: 800px) {
+  .grid_ordi {
+    display: block; /* Affiche la grille en mode bloc */
   }
-}
-
-@media (max-width: 1240px) {
-  .txt-bubble-prudence {
-    left: 0%;
-  }
-}
-
-/* Div contenant "photo cartoon" */
-#photo-cartoon {
-  z-index: 2; /* Assurez-vous que cette valeur est inférieure à celle de .slider */
-  position: absolute;
-  top: 47%; 
-  left: 50%; 
-  width: 50%; 
-  height: 70%; 
-  pointer-events: none; 
-  padding: 0;
-}
-
-@media (max-width: 1335px) {
-  #photo-cartoon {
-    top: 49%; 
-  }
-}
-
-@media (max-width: 1190px) {
-  #photo-cartoon {
-    top: 51%; 
-  }
-}
-
-@media (max-width: 1024px) {
-  #photo-cartoon {
-    top: 52%; 
-    left: 52%;
-    width: 48%;
-  }
-}
-
-@media (max-width: 960px) {
-  #photo-cartoon {
-    top: 54%; 
-    left: 53%;
-  }
-}
-
-@media (max-width: 850px) {
-  #photo-cartoon {
-    top: 55%; 
+  .ordi_container {
+    display: none; /* Cache complètement la partie laptop */
   }
 }
