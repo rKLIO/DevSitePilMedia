@@ -692,7 +692,16 @@ footer {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc((-250px * 26) + (-50px * 26)));
+    transform: translateX(calc((-250px * 13) + (-50px * 13)));
+  }
+}
+
+@keyframes scroll-reverse {
+  0% {
+    transform: translateX(calc((-250px * 13) + (-50px * 13)));
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 
@@ -726,9 +735,18 @@ footer {
 }
 
 .slider .slide-track {
-  animation: scroll 80s linear infinite;
+  animation: scroll 50s linear infinite;
   display: flex;
-  width: calc((250px * 52) + (50px * 52));
+  width: calc((250px * 26) + (50px * 26));
+  gap: 50px;
+  height: 100%;
+  will-change: transform;
+}
+
+.slider .slide-track-reverse {
+  animation: scroll-reverse 50s linear infinite;
+  display: flex;
+  width: calc((250px * 26) + (50px * 26));
   gap: 50px;
   height: 100%;
   will-change: transform;

@@ -93,7 +93,7 @@ window.addEventListener("load", () => {
   });
 
   function syncCarouselWithText(index) {
-    const carousel = $('#carouselExample');
+    const carousel = $('#carousel-laptop');
     const items = carousel.find('.carousel-item');
     items.removeClass('active');
     items.eq(index).addClass('active');
