@@ -51,57 +51,55 @@ $(document).ready(function () {
 
 // ----------------------------------------------------------------------------
 
-// gsap.registerPlugin(ScrollTrigger);
+window.addEventListener("load", () => {
+  if (window.innerWidth < 1260) {
+    // Pas de scrollTrigger pour les petits écrans
+    return;
+  }
 
-// window.addEventListener("load", () => {
-//   const textElement = document.getElementById('changing-text');
-//   const hiddenTexts = document.querySelectorAll('#hidden-texts > div');
-//   const texts = Array.from(hiddenTexts).map(div => div.innerHTML);
+  // Tout ton code GSAP ici uniquement pour les grands écrans
+  const textElement = document.getElementById('changing-text');
+  const hiddenTexts = document.querySelectorAll('#hidden-texts > div');
+  const texts = Array.from(hiddenTexts).map(div => div.innerHTML);
+  let currentIndex = -1;
+  const textTimeline = gsap.timeline({ paused: true });
 
-//   let currentIndex = -1; // On garde l'index du texte actuel
+  ScrollTrigger.create({
+    id: "services-scroll",
+    trigger: "#services",
+    start: "top top",
+    end: "+=" + (texts.length * 100) + "%",
+    pin: true,
+    scrub: true,
+    onUpdate: (self) => {
+      let index = Math.floor(self.progress * texts.length);
+      if (index >= texts.length) index = texts.length - 1;
 
-//   // Timeline spéciale pour l'animation du texte
-//   const textTimeline = gsap.timeline({ paused: true });
+      if (index !== currentIndex) {
+        currentIndex = index;
 
-//   ScrollTrigger.create({
-//     trigger: "#services",
-//     start: "top top",
-//     end: "+=" + (texts.length * 100) + "%",
-//     pin: true,
-//     scrub: true,
-//     onUpdate: (self) => {
-//       let progress = self.progress;
-//       let index = Math.floor(progress * texts.length);
-//       if (index >= texts.length) index = texts.length - 1;
+        textTimeline.clear();
+        textTimeline
+          .to(textElement, { opacity: 0, duration: 0.3, ease: "power1.out" })
+          .add(() => {
+            textElement.innerHTML = texts[index];
+          })
+          .to(textElement, { opacity: 1, duration: 0.3, ease: "power1.in" });
 
-//       if (index !== currentIndex) {
-//         currentIndex = index;
+        textTimeline.play(0);
+        syncCarouselWithText(index);
+      }
+    }
+  });
 
-//         // Animation en 2 temps : fade out -> changer texte -> fade in
-//         textTimeline.clear(); // on vide la timeline pour éviter les accumulations
-//         textTimeline
-//           .to(textElement, { opacity: 0, duration: 0.3, ease: "power1.out" }) // fade out actuel
-//           .add(() => {
-//             textElement.innerHTML = texts[index]; // changer le texte
-//           })
-//           .to(textElement, { opacity: 1, duration: 0.3, ease: "power1.in" }); // fade in nouveau
-          
-//         textTimeline.play(0); // rejouer la timeline depuis le début
+  function syncCarouselWithText(index) {
+    const carousel = $('#carouselExample');
+    const items = carousel.find('.carousel-item');
+    items.removeClass('active');
+    items.eq(index).addClass('active');
+  }
+});
 
-//         // Synchroniser le carousel avec le texte
-//         syncCarouselWithText(index);
-//       }
-//     }
-//   });
-
-//   // Fonction pour synchroniser le carousel avec le texte
-//   function syncCarouselWithText(index) {
-//     const carousel = $('#carouselExample');
-//     const items = carousel.find('.carousel-item');
-//     items.removeClass('active'); // Supprime la classe active de toutes les slides
-//     items.eq(index).addClass('active'); // Ajoute la classe active à la slide correspondante
-//   }
-// });
 
 document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.querySelector('.menu-toggle');
@@ -110,4 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
   menuToggle.addEventListener('click', () => {
     nav.classList.toggle('open'); // Ajoute ou enlève la classe "open"
   });
+
 });
+
