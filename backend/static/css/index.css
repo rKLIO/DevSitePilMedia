@@ -678,7 +678,7 @@ footer {
 .game-section h2 {
   text-align: center;
   font-size: 3rem;
-  margin-bottom: 3.75rem;
+  margin-bottom: 3rem;
   background: var(--gradient);
   -webkit-background-clip: text;
   color: transparent;
