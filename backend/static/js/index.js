@@ -1,15 +1,15 @@
 $(document).ready(function () {
   $(".custom-carousel").owlCarousel({
     autoWidth: true,
-    loop: false,
+    loop: true,
     rtl: true,
-    autoplay: false,
+    autoplay: true,
     autoplayTimeout: 3000,
     autoplayHoverPause: true,
     smartSpeed: 800,
     dots: false,
     margin: 10,
-    items: 4.5,
+    items: 5,
     mouseDrag: true, // Active le click and drag
     touchDrag: true, // Active le drag sur mobile
     nav: false, // Désactive les boutons de navigation
