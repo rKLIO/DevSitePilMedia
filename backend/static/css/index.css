@@ -678,7 +678,7 @@ footer {
 .game-section h2 {
   text-align: center;
   font-size: 3rem;
-  margin-bottom: 3rem;
+  margin-bottom: 3.75rem;
   background: var(--gradient);
   -webkit-background-clip: text;
   color: transparent;
@@ -1147,3 +1147,24 @@ footer {
     display: none;
   }
 } */
+
+/* Par défaut */
+.item-desc {
+  transform: translateY(calc(100% - 54px));
+  transition: all 0.4s ease-in-out;
+}
+
+/* Si le titre est trop long */
+.item-desc.high-title {
+  transform: translateY(calc(100% - 65px)); /* Remonter davantage */
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .game-section .item-desc {
+    transform: translateY(calc(100% - 42px));
+  }
+  .game-section .item-desc.high-title {
+    transform: translateY(calc(100% - 90px));
+  }
+}
