@@ -94,7 +94,7 @@ window.addEventListener("load", () => {
 
   function syncCarouselWithText(index) {
     const carousel = $('#carousel-laptop');
-    const items = carousel.find('.carousel-item');
+    const items = carousel.find('.custom-laptop-carousel-item');
     items.removeClass('active');
     items.eq(index).addClass('active');
   }
@@ -111,3 +111,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+// ----------------------------------------------------------------------------
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const buttons = document.querySelectorAll('.change-element');
+//   const elements = document.querySelectorAll('.dynamic-element');
+
+//   // Fonction pour afficher un élément spécifique
+//   function showElement(index) {
+//     elements.forEach((element, i) => {
+//       if (i === index) {
+//         element.classList.add('active'); // Affiche l'élément correspondant
+//       } else {
+//         element.classList.remove('active'); // Cache les autres éléments
+//       }
+//     });
+//   }
+
+//   // Ajoute un événement de clic à chaque bouton
+//   buttons.forEach((button) => {
+//     button.addEventListener('click', () => {
+//       const index = parseInt(button.getAttribute('data-index'), 10);
+//       showElement(index);
+//     });
+//   });
+
+//   // Affiche le premier élément par défaut
+//   showElement(0);
+// });
