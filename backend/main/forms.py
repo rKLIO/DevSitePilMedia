@@ -21,8 +21,9 @@ class InfosGeneralesForm(forms.ModelForm):
                 'placeholder': 'Votre numéro de téléphone',
                 'class': 'phone-input',
                 'id':'id_numero',
-                'type': 'tel'
+                'type': 'tel',
             }),
+            
             'nom': forms.TextInput(attrs={'required': 'required', 'placeholder': 'Nom de particulier ou d\'entreprise'}),
             'indicatif': forms.HiddenInput(attrs={'id':'indicatif'}),
             'numero_sans_indicatif': forms.HiddenInput(attrs={'id':'numero_sans_indicatif'}),
