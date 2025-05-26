@@ -33,9 +33,10 @@
       <a href="#equipe">Équipe</a>
       <a href="#services">Services</a>
       <a href="#formations">Formations</a>
-      <a href="#pourquoi-nous">Pourquoi-Nous ?</a>
+      <a href="#pourquoi-nous">Pourquoi - Nous ?</a>
       <a href="#realisations">Réalisations</a>
       {% comment %} <a href="#avis">Avis</a> {% endcomment %}
+      <div > <button type="button" onclick="window.location.href='{% url 'contact' %}'" class="incitation-btn"> Créer votre projet </button> </div>
     </nav>
 
     <!-- Bouton pour ouvrir le menu -->
@@ -394,9 +395,9 @@
   </section>
 
   <!-- Incitation -->
-  <section  id="incitation" class="incitation">
+  <section  id="incitation2" class="incitation">
     <div> <p class="incitation-txt">Prenez de l’avance </br> dès aujourd’hui</p> </div>
-    <div class="incitation-div-btn"> <button type="submit" class="incitation-btn"> Créer votre projet </button> </div>
+    <div class="incitation-div-btn"> <button type="button" onclick="window.location.href='{% url 'contact' %}'" class="incitation-btn"> Créer votre projet </button> </div>
   </section>
 
   <!-- Services -->
@@ -608,6 +609,7 @@
     </div>
   </section>
 
+  <!-- Pourquoi nous -->
   <section class="section" id="pourquoi-nous">
     <h2>Pourquoi - Nous ?</h2>
     <div style="justify-content: center; display: flex; align-items: center;">  
@@ -694,9 +696,9 @@
 
   <!-- Incitation -->
   <section>
-    <div  id="incitation" class="incitation">
+    <div  id="incitation3" class="incitation">
       <div> <p class="incitation-txt">Lancez votre projet </br> maintenant</p> </div>
-      <div class="incitation-div-btn"> <button type="submit" class="incitation-btn"> Créer votre projet </button> </div>
+      <div class="incitation-div-btn"> <button type="button" onclick="window.location.href='{% url 'contact' %}'" class="incitation-btn"> Créer votre projet </button> </div>
     </div>
   </section>
 
@@ -704,7 +706,15 @@
   <section class="game-section" id="realisations">
     <h2 class="line-title">Nos Réalisations</h2>
     <div class="owl-carousel custom-carousel owl-theme">
-      <div class="item active" style="background-image: url('static/image/realisations/a.png');">
+      {% for realisation in realisations %}
+        <div class="item{% if forloop.first %} active{% endif %}" style="background-image: url('{{ realisation.image|urlencode }}');">
+          <div class="item-desc">
+            <h3>{{ realisation.nom_projet }}</h3>
+            <p>{{ realisation.description }}</p>
+          </div>
+        </div>
+      {% endfor %}
+      {% comment %} <div class="item active" style="background-image: url('static/image/realisations/a.png');">
         <div class="item-desc">
           <h3>CIP Paul GAUGUIN</h3>
           <p>Développement d’un audioguide multilingue sur smartphone avec scan de QR codes.
@@ -775,7 +785,7 @@
           <p>Développement d’une application mobile pour la chaîne locale ViaATV, avec publication sur les stores.
             Sprints de 2 semaines et interfaçage complet avec les API de contenus et de publicité 45 jours/homme pour une solution fluide et connectée aux outils du client</p>
         </div>
-      </div>
+      </div> {% endcomment %}
     </div>
   </section>
 
@@ -850,9 +860,9 @@
   </section> {% endcomment %}
 
   <!-- Incitation -->
-  <section  id="incitation" class="incitation" style="position: relative; z-index: 3;">
+  <section  id="incitation1" class="incitation" style="position: relative; z-index: 3;">
     <div> <p class="incitation-txt">Passez à l’action !</p> </div>
-    <div class="incitation-div-btn" style="height: 100%;"> <button type="submit" class="incitation-btn"> Créer votre projet </button> </div>
+    <div class="incitation-div-btn" style="height: 100%;"> <button type="button" onclick="window.location.href='{% url 'contact' %}'" class="incitation-btn"> Créer votre projet </button> </div>
   </section>  
 
   <!-- Footer avec géolocalisation -->

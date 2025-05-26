@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from main.models import Realisation
+from main.models import *
 
 # Register your models here.
 
@@ -12,3 +12,5 @@ class RealisationAdmin(admin.ModelAdmin):
     ordering = ('nom_projet',)
 
 admin.site.register(Realisation, RealisationAdmin)
+
+admin.site.register(DemandeProjet)

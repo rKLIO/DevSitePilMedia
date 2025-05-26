@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PIL-MEDIA Formulaire de contact</title>
+
+  <!-- CSS intl-tel-input -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.8/build/css/intlTelInput.min.css">
+
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+  <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="header">
+    <div class="div-logo">
+      <a href="/">
+        <img src="{% static 'image/Logo Original.png' %}" alt="Logo PILMEDIA" class="img-logo" />
+      </a>
+    </div>
+  </header>
+
+<section class="section">
+
+  <div style="background-color:#ffffffda; border-radius: 30px; 
+  height: 100%; width: 100%;  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);">
+    
+    <h2> Description </h2>
+
+    <form method="post">
+      {% csrf_token %}
+      {{ wizard.management_form }}
+
+      <label for="{{ wizard.form.nom.id_for_label }}">Nom</label>
+      {{ wizard.form.nom }}
+
+      <label for="{{ wizard.form.email.id_for_label }}">Email</label>
+      {{ wizard.form.email }}
+
+      <label for="{{ wizard.form.numero.id_for_label }}">Numéro de téléphone</label>
+      <div class="phone-wrapper">
+        {{ wizard.form.numero }}
+      </div>
+
+      {{ wizard.form.indicatif }}
+      {{ wizard.form.numero_sans_indicatif }}
+
+      <button type="submit">Envoyer</button>
+    </form>
+  </div>
+</section>
+
+
+  <!-- JS intl-tel-input -->
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.8/build/js/intlTelInput.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.8/build/js/utils.js"></script>
+
+  <!-- Ton JS perso -->
+  <script src="{% static 'js/contact.js' %}"></script>
+</body>
+</html>

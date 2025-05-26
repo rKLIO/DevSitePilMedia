@@ -1,6 +1,8 @@
 from django.urls import path
-from . import views
+from .views import *
+from .forms import InfosGeneralesForm
 
 urlpatterns = [
-    path('', views.main_page, name='main_page'),  # Main page URL
+    path('', main_page, name='main_page'),  # Main page URL
+    path("contact/", DemandeProjetWizard.as_view([("infos", InfosGeneralesForm)]), name="contact"),
 ]

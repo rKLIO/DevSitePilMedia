@@ -9,7 +9,7 @@ $(document).ready(function () {
     smartSpeed: 800,
     dots: false,
     margin: 10,
-    items: 5,
+    items: 3,
     mouseDrag: true, // Active le click and drag
     touchDrag: true, // Active le drag sur mobile
     nav: false, // Désactive les boutons de navigation
@@ -105,10 +105,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.nav');
 
-  menuToggle.addEventListener('click', () => {
-    nav.classList.toggle('open'); // Ajoute ou enlève la classe "open"
+  // Ouverture/Fermeture en cliquant sur le bouton
+  menuToggle.addEventListener('click', (event) => {
+    event.stopPropagation(); // Empêche le clic de se propager au document
+    nav.classList.toggle('open');
   });
 
+  // Empêche la fermeture quand on clique à l'intérieur du menu
+  nav.addEventListener('click', (event) => {
+    event.stopPropagation();
+  });
+
+  // Ferme le menu si on clique ailleurs
+  document.addEventListener('click', () => {
+    if (nav.classList.contains('open')) {
+      nav.classList.remove('open');
+    }
+  });
 });
 
 // ----------------------------------------------------------------------------
