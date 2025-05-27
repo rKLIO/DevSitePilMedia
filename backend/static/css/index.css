@@ -941,6 +941,17 @@ footer {
   padding: 0;
 }
 
+#pourquoi-nous{ 
+  background-repeat: no-repeat; 
+  background-position: left bottom;
+}
+
+@media screen and (max-width: 1440px) {
+  #pourquoi-nous{
+    background-size: 35rem;
+  }
+}
+
 @media screen and (max-width: 1340px) {
   .txt-bubble-size {
     font-size: 1.2rem !important;
@@ -1051,6 +1062,10 @@ footer {
   .formations-grid p {
     font-size: .8rem; 
   }
+
+  #pourquoi-nous {
+        background-size: 30rem;
+    }
 }
 
 @media screen and (max-width: 983px) {
@@ -1070,6 +1085,10 @@ footer {
   .incitation-btn {
     font-size: smaller;
   }
+
+  #pourquoi-nous {
+        background-image: None !important;
+    }
 }
 
 @media screen and (max-width: 960px) {
