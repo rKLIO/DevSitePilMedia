@@ -11,14 +11,14 @@ class InfosGeneralesForm(forms.ModelForm):
         widgets = {
             
             'email': forms.EmailInput(attrs={
-                'placeholder': 'votre@email.com',
+                'placeholder': 'Votre@email.com',
                 'required': 'required',
                 'pattern': '^[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9._%+\\-]+\\.[a-zA-Z]{2,}$',
                 'title': 'Veuillez entrer une adresse e-mail valide'
             }),
             # Ne pas gérer le pattern ici, c’est la librairie JS qui gère la validation
             'numero': forms.TextInput(attrs={
-                'placeholder': 'Votre numéro de téléphone',
+                'placeholder': 'Numéro de téléphone',
                 'class': 'phone-input',
                 'id':'id_numero',
                 'type': 'tel',
