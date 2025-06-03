@@ -4,14 +4,21 @@ html, body {
   padding: 0;
 }
 
+.header {
+  box-shadow: none;
+}
 
 .section {
-  /* height: 100%; */
+  height: 100vh;
   display: flex;
   justify-content: center;
-  padding-top: 150px;
+  padding-top: 130px;
   background-color: var(--bg);
+  background-repeat: no-repeat; 
+  background-position: left bottom;
 }
+
+
 
 .div-contact{
   border-radius: 30px; 
@@ -27,11 +34,11 @@ html, body {
 
 
 /* Conteneur général du champ téléphone */
-.phone-wrapper {
+/* .phone-wrapper {
   display: flex;
-  /* align-items: center; */
+  align-items: center;
   width: 100%;
-}
+} */
 
 /* intl-tel-input prend toute la largeur disponible */
 .intl-tel-input {
@@ -43,6 +50,14 @@ input[type="tel"] {
   width: 100%;
   font-size: 1rem;
   box-sizing: border-box;
+}
+
+.iti--separate-dial-code .iti__selected-flag {
+  width: 100%;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding: 5px;
 }
 
 /* Style spécifique quand separateDialCode est activé */
@@ -93,6 +108,10 @@ input[type="tel"] {
   border-radius: 6px;
 }
 
+.iti__divider{
+  height: 1rem;
+  /* background-color: #00c8d7; */
+}
 
 /* Drapeau et indicatif */
 .intl-tel-input .selected-flag {
@@ -124,8 +143,12 @@ input[type="tel"] {
     position: relative;
     display: flex;
     width: 100%;
-    gap: 1rem;
+    gap: .5rem;
   }
+
+form input{
+  font-size: 1rem;
+}
 
 @media screen and (max-width: 1024px) {
   .div-contact {
@@ -139,6 +162,26 @@ input[type="tel"] {
   }
 }
 
-/* @media screen and (max-height: 1368px) and (max-height: 1280px) {
-  
-} */
+@media screen and (max-width: 983px) {
+    .section {
+        background-image: None !important;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .section {
+        background-size: 30rem;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .section {
+        background-size: 35rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+  .section h2{
+    font-size: 2.7rem;
+    margin-bottom: 2rem; 
+  }
+}

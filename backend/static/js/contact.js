@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(data => success(data.country_code))
         .catch(() => success("fr"));
     },
-    preferredCountries: ["fr", "gp", "mq", "be", "us"],
+    preferredCountries: ["fr", "gp", "mq"],
     separateDialCode: true,
     utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
   });

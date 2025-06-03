@@ -14,8 +14,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+  
   <link rel="stylesheet" href="{% static 'css/index.css' %}">
+  <link rel="shortcut icon" type="image/png" href="{% static 'image/logo_pilmedia_favicon.png' %}" >
+
   {% tailwind_css %}
 
 </head>
@@ -25,8 +27,11 @@
   <!-- Navigation -->
   <header class="header">
     <div class="div-logo">
-      <img src={% static 'image/Logo Original.png' %} alt="Logo PILMEDIA" class="img-logo" />
+      <a href="#home">
+        <img src="{% static 'image/Logo Original.png' %}" alt="Logo PILMEDIA" class="img-logo" />
+      </a>
     </div>
+
     <nav class="nav">
       <a href="#home">Accueil</a>
       <a href="#about">À propos</a>
@@ -40,7 +45,7 @@
     </nav>
 
     <!-- Bouton pour ouvrir le menu -->
-    <button class="menu-toggle" aria-label="Menu">
+    <button class="menu-lat" aria-label="Menu">
       ☰
     </button>
   </header>
@@ -209,78 +214,78 @@
     </div>      
   </section>
 
-<!-- Collaborateurs -->
-<section>
-  <div class="slider">
-    <div class="slide-track">
-      <!-- Originales -->
-      <div class="slide"><img src="static\image\collaborateur\Mission locale (collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\Mservir (collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"> <img src="static\image\collaborateur\NHS (collaborateur ).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\Rentokil Initial (collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\RTM (collaorateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\semsamar (collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\SNTA (collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\soame (collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\sud lib (collaboarteurs).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\unitC (collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\université des antilles (collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\ville du robert (collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\ville du vauclin (collaborateur).png" height="100" width="250" alt="" /></div>
+  <!-- Collaborateurs -->
+  <section>
+    <div class="slider">
+      <div class="slide-track">
+        <!-- Originales -->
+        <div class="slide"><img src="static\image\collaborateur\Mission locale (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\Mservir (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"> <img src="static\image\collaborateur\NHS (collaborateur ).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\Rentokil Initial (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\RTM (collaorateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\semsamar (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\SNTA (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\soame (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\sud lib (collaboarteurs).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\MOBILITE_SUD (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\université des antilles (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\ville du robert (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\ville du vauclin (collaborateur).png" height="100" width="250" alt="" /></div>
 
-      <!-- Duplicata -->
-      <div class="slide"><img src="static\image\collaborateur\Mission locale (collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\Mservir (collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\NHS (collaborateur ).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\Rentokil Initial (collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"> <img src="static\image\collaborateur\RTM (collaorateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\semsamar (collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\SNTA (collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\soame (collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\sud lib (collaboarteurs).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\unitC (collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\université des antilles (collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\ville du robert (collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\ville du vauclin (collaborateur).png" height="100" width="250" alt="" /></div>
+        <!-- Duplicata -->
+        <div class="slide"><img src="static\image\collaborateur\Mission locale (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\Mservir (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\NHS (collaborateur ).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\Rentokil Initial (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"> <img src="static\image\collaborateur\RTM (collaorateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\semsamar (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\SNTA (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\soame (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\sud lib (collaboarteurs).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\MOBILITE_SUD (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\université des antilles (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\ville du robert (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\ville du vauclin (collaborateur).png" height="100" width="250" alt="" /></div>
 
+      </div>
     </div>
-  </div>
-  <div class="slider">
-    <div class="slide-track-reverse">
-      <!-- Originales -->
-      <div class="slide"><img src="static\image\collaborateur\Canal +(collaborateur).png" height="100" width="250" alt=""/></div>
-      <div class="slide"><img src="static\image\collaborateur\CANBT (collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\chu (collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\city'up (collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\Ctm (collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\Digicel ( collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\espace sud (collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\euroscore (collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\guyane ODC (collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\INRAE ( collaborateur ).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\le logis Saint-jean (collaborateur).webp" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\Logo.png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\Madinina Bikers (collaborateur) (2).png" height="100" width="250" alt="" /></div>
-      
-      
-      <!-- Duplicata -->
-      <div class="slide"><img src="static\image\collaborateur\Canal +(collaborateur).png" height="100" width="250" alt=""/></div>
-      <div class="slide"><img src="static\image\collaborateur\CANBT (collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\chu (collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\city'up (collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\Ctm (collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\Digicel ( collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\espace sud (collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\euroscore (collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\guyane ODC (collaborateur).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\INRAE ( collaborateur ).png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\le logis Saint-jean (collaborateur).webp" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\Logo.png" height="100" width="250" alt="" /></div>
-      <div class="slide"><img src="static\image\collaborateur\Madinina Bikers (collaborateur) (2).png" height="100" width="250" alt="" /></div>
-      
+    <div class="slider">
+      <div class="slide-track-reverse">
+        <!-- Originales -->
+        <div class="slide"><img src="static\image\collaborateur\Canal +(collaborateur).png" height="100" width="250" alt=""/></div>
+        <div class="slide"><img src="static\image\collaborateur\CANBT (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\chu (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\city'up (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\Ctm (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\Digicel ( collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\espace sud (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\euroscore (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\guyane ODC (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\INRAE ( collaborateur ).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\le logis Saint-jean (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\GIA (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\Madinina Bikers (collaborateur) (2).png" height="100" width="250" alt="" /></div>
+        
+        
+        <!-- Duplicata -->
+        <div class="slide"><img src="static\image\collaborateur\Canal +(collaborateur).png" height="100" width="250" alt=""/></div>
+        <div class="slide"><img src="static\image\collaborateur\CANBT (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\chu (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\city'up (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\Ctm (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\Digicel ( collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\espace sud (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\euroscore (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\guyane ODC (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\INRAE ( collaborateur ).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\le logis Saint-jean (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\GIA (collaborateur).png" height="100" width="250" alt="" /></div>
+        <div class="slide"><img src="static\image\collaborateur\Madinina Bikers (collaborateur) (2).png" height="100" width="250" alt="" /></div>
+        
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- Equipe -->
   <section id="equipe" class="section">
@@ -344,7 +349,7 @@
         <div class="p_container">
           <div class="p_container-inner">
             <img class="p_circle" src="" />
-            <img class="p_img " src="static\image\profil\patrice lorto(portrait) (2).png" />
+            <img class="p_img " src="static\image\profil\Patrice Lorto.png" />
           </div>
         </div>
         <div class="p_divider"></div>
@@ -357,7 +362,7 @@
         <div class="p_container">
           <div class="p_container-inner">
             <img class="p_circle" src="" />
-            <img class="p_img " src="static\image\profil\Carole Magellan (portrait).png" />
+            <img class="p_img " src="static\image\profil\Carole Magellan.png" />
           </div>
         </div>
         <div class="p_divider"></div>
@@ -370,7 +375,7 @@
         <div class="p_container">
           <div class="p_container-inner">
             <img class="p_circle" src="" />
-            <img class="p_img " src="static\image\profil\Philippe celestin (2).png" />
+            <img class="p_img " src="static\image\profil\Philippe Celestin.png" />
           </div>
         </div>
         <div class="p_divider"></div>
@@ -388,7 +393,7 @@
         </div>
         <div class="p_divider"></div>
         <div class="p_name">Fabrice L.</div>
-        <div class="p_title">Admin Sydtèmes & Réseaux</div>
+        <div class="p_title">Admin Systèmes & Réseaux</div>
       </div>
 
     </div>
@@ -417,66 +422,52 @@
           <div id="hidden-texts" style="display: none;">  
             <div style="margin-bottom: 1rem;">
               <h3>Outils décisionnels</h3>
-              <p>Votre entreprise ne fonctionne pas de façon optimale selon vos critères et vous souhaitez augmenter votre rendement ? 
-                Pour savoir quels sont les postes à optimiser vous avez besoin d'informations stratégiques ! 
-                Comment obtenir des informations pertinentes pour prendre des décisions éclairées et définir les stratégies à mettre en place ? 
-                Les outils décisionnels aident à traiter les données de votre entreprise pour en extraire les informations utiles .</p>
+              <p>Vos performances peuvent être optimisées avec les bons outils. 
+                Les outils décisionnels analysent vos données pour extraire l’essentiel. 
+                Ils vous aident à prendre des décisions stratégiques.</p>
                 
               <div class="divider-v"></div>
             </div>
             <div style="margin-bottom: 1rem;">
               <h3>Gestion de la Relation Client</h3>
-              <p>Comment gérez-vous la relation avec vos clients ? 
-                L'expérience utilisateur est devenue déterminante pour fidéliser ses clients.
-                 Vous faites votre suivi clientèle sur un fichier excel ? 
-                 Vous deviez rappeler ce futur client mais absorbé(e) dans votre programme de la journée, vous avez oublié ? 
-                Une alerte vous aurait été utile ! 
-                La véritable boîte à outils de votre service commercial est le CRM (Customer Relation Manager).</p>
+              <p>Un CRM remplace les suivis manuels et les oublis de relance. 
+                Il centralise les interactions et automatise les rappels. 
+                Résultat : un meilleur suivi client et plus de fidélité.</p>
                 
               <div class="divider-v"></div>
             </div>
             <div style="margin-bottom: 1rem;">
               <h3>Signature électronique</h3>
-              <p> Besoin de répondre à un appel d'offres public ou d’envoyer des factures dématérialisées à l'État ?
-                Envie de signer vos contrats plus rapidement tout en gardant leur valeur légale ?
-                
-                La signature électronique garantit l’intégrité de vos documents et l’authenticité du signataire, comme une signature manuscrite.
-                Notre solution certifiée respecte la loi (article 1316-4 du Code Civil) et sécurise vos échanges.</p>
+              <p>Signez vos contrats et documents rapidement, même à distance. 
+                Notre solution certifiée garantit la valeur légale de chaque signature. 
+                Elle sécurise vos échanges en toute conformité.</p>
                 
               <div class="divider-v"></div>
             </div>
             <div style="margin-bottom: 1rem;">
               <h3>GED</h3>
-              <p>La Gestion Electronique des Documents (GED ou en anglais DMS pour Document Management System ou EDM pour Electronic Document Management) 
-                désigne un procédé informatisé visant à organiser et gérer des informations et des documents électroniques au sein d'une organisation. 
-                Elle prend en compte le besoin de gestion des documents selon leur cycle de vie, de la création à l'archivage en passant par la gestion des différentes versions.
-                 À titre d'exemple, le retour sur investissement d'un projet « standard » de dématérialisation de factures est inférieur à un an .</p>
-                
+              <p>La GED structure vos documents numériques de façon centralisée. 
+                Elle gère leur cycle de vie : création, modification, archivage. 
+                Vous gagnez en organisation et en traçabilité.
               <div class="divider-v"></div>
             </div>
             <div style="margin-bottom: 1rem;">
               <h3>Développement sur mesure</h3>
-              <p> Nous développons des applications sur mesure, parfaitement adaptées aux besoins et spécificités de votre métier.
-                Notre expertise nous permet de réaliser tous types de projets : applications web (intranet, extranet, mobile), sites internet, logiciels et applications mobiles (iOS et Android).
-                
-                Le tout en tenant compte de vos contraintes, exigences et objectifs.</p>
+              <p>Nous créons des solutions adaptées à vos besoins spécifiques. 
+                Applications web, mobiles ou logiciels : tout est possible. 
+                Vos contraintes et objectifs guident notre développement.</p>
               <div class="divider-v"></div>
             </div>
             <div style="margin-bottom: 1rem;">
               <h3>La transition numérique</h3>
-              <p> Opérer une transition numérique c'est mettre au service de votre entreprise des outils informatiques et digitaux. 
-                Une intégration réussie d'applications numériques optimise votre fonctionnement interne :</p>
+              <p>La transition numérique intègre des outils digitaux pour moderniser votre entreprise. 
+                Elle optimise vos processus et améliore vos performances. 
+                Concrètement, cela inclut :</p>
               <ul style="list-style-type: none; text-align: left; columns: 1;">
-                <li>- Optimiser vos tâches </li>
-                <li>- Optimiser vos ressources</li>
-                <li>- Améliorer vos performances</li>
-                <li>- Améliorer votre communication</li>
-                
-                <li>- Avoir des outils de reporting</li>
-                <li>- Limiter les erreurs humaines</li>
-                <li>- Renforcer les processus internes</li>
-                <li>- Se conformer aux normes légales</li>
-                
+                <li>- Optimisation des tâches et des ressources </li>
+                <li>- Amélioration de la communication et du reporting</li>
+                <li>- Réduction des erreurs et renforcement des processus</li>
+                <li>- Conformité aux normes légales</li>
               </ul>    
             </div>
           </div>      
@@ -536,7 +527,7 @@
             <h3>Développement & Web</h3> 
           </div>
           <div class="formations-txt">               
-            <p>- Développement d'applications & portails web</p>
+            <p>- Développement d'applications & portails web</p>   
             <p>- Infographie</p>
           </div>
         </div>
@@ -568,7 +559,8 @@
             <h3>Solutions sur mesure</h3>
           </div>
           <div class="formations-txt">
-            <p>- Interventions en régie</p>      
+            <p>- Interventions en régie</p>
+            <p>- SAAS (Software as a service)</p>      
           </div>                                   
         </div>
         <div class="divider-h"></div>
@@ -610,7 +602,7 @@
   </section>
 
   <!-- Pourquoi nous -->
-  <section class="section" id="pourquoi-nous" style="background-image: url('static/image/cdf65833-ad7f-4f66-afbc-4dab498bb168-removebg-preview 1.svg');">
+  <section class="section" id="pourquoi-nous" style="background-image: url('static/image/damien_pourquoi_nous.svg');">
     <h2>Pourquoi - Nous ?</h2>
     <div style="justify-content: center; display: flex; align-items: center; ">  
       
@@ -623,7 +615,7 @@
               <div><div class="bar"></div></div>
               <div class="content">
                 <div class="top-row">
-                  <div class="block" id="slide-img"><img src="static\image\clarity_computer-solid.svg"></div>
+                  <div class="block" id="slide-img"><img src="static\image\logo_vision_globale.svg"></div>
                   <div class="block"><h3>Vision globale</h3></div>
                 </div>
                 <div class="bottom-row"><p>Nous vous aidons à définir la vision d'ensemble de votre projet, à en structurer les grandes lignes et à en dégager des perspectives claires et porteuses d'avenir</p></div>
@@ -637,7 +629,7 @@
               <div><div class="bar"></div></div>
               <div class="content">
                 <div class="top-row">
-                  <div class="block" id="slide-img"><img src="static\image\akar-icons_light-bulb.svg"></div>
+                  <div class="block" id="slide-img"><img src="static\image\logo_conseil_personnnalise.svg"></div>
                   <div class="block"><h3>Conseils personnalisés</h3></div>
                 </div>
                 <div class="bottom-row"><p>Nous vous accompagnons à chaque étape du projet, depuis sa conception jusqu’à sa réalisation, afin d’en faire une réussite durable et pleinement alignée avec vos objectifs</p></div>
@@ -651,7 +643,7 @@
               <div><div class="bar"></div></div>
               <div class="content">
                 <div class="top-row">
-                  <div class="block" id="slide-img"><img src="static\image\game-icons_house.svg"></div>
+                  <div class="block" id="slide-img"><img src="static\image\logo_equipe_reactive.svg"></div>
                   <div class="block"><h3>Equipe réactive</h3></div>
                 </div>
                 <div class="bottom-row"><p>Nos équipes s’engagent pleinement à vos côtés, en mettant leur expertise et leur réactivité au service de votre projet, pour garantir sa réussite dans les meilleures conditions</p></div>
@@ -665,7 +657,7 @@
               <div><div class="bar"></div></div>
               <div class="content">
                 <div class="top-row">
-                  <div class="block" id="slide-img"><img src="static\image\icon-park-solid_box.svg"></div>
+                  <div class="block" id="slide-img"><img src="static\image\logo_conformite_rgpd.svg"></div>
                   <div class="block"><h3>Conformité RGPD</h3></div>
                 </div>
                 <div class="bottom-row"><p>Nous avons à cœur de garantir la sécurité, la confidentialité et l’intégrité des données de nos clients et des vôtres, en nous appuyant sur des protocoles rigoureux et des technologies de pointe</p></div>
@@ -677,14 +669,24 @@
       
         <!-- Contrôles -->
       <div class="slider-controls-grid">    
-        <div></div>
+        <div>
+          <div class="carousel-indicators-custom">
+            <div class="dot active" data-slide-to="0"></div>
+            <div class="dot" data-slide-to="1"></div>
+            <div class="dot" data-slide-to="2"></div>
+            <div class="dot" data-slide-to="3"></div>
+          </div>
+        </div>
         <div class="controls-button-container"> 
-          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev" style="position: relative; width: 25%;">
-              <img src="static\image\arrow-reverse.svg" alt="Suivant">
+          <a class="carousel-control-prev arrow"  href="#carouselExampleControls" role="button" data-slide="prev">
+              {% comment %} <img src="static\image\arrow-reverse.svg" alt="Suivant"> {% endcomment %}
+              <i class="fas fa-chevron-left"></i>
               <span class="sr-only">Précédent</span>
             </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next" style="position: relative; width: 25%;">
-              <img src="static\image\arrow.svg" alt="Suivant">
+            <a class="arrow carousel-control-next " href="#carouselExampleControls" role="button" data-slide="next">
+              {% comment %} <img src="static\image\Vector 1.svg" alt="Suivant"> {% endcomment %}
+              <!--<img src="static\image\Vector 1.svg" alt="Suivant">-->
+              <i class="fas fa-chevron-right"></i>
               <span class="sr-only">Suivant</span>
             </a>
         </div>    
@@ -714,78 +716,6 @@
           </div>
         </div>
       {% endfor %}
-      {% comment %} <div class="item active" style="background-image: url('static/image/realisations/a.png');">
-        <div class="item-desc">
-          <h3>CIP Paul GAUGUIN</h3>
-          <p>Développement d’un audioguide multilingue sur smartphone avec scan de QR codes.
-            Projet local mené en méthode agile avec points techniques réguliers et forte proximité client.
-            Spécifications, développement et suivi assurés sur 35 jours/homme</p>
-        </div>
-      </div>
-      <div class="item" style="background-image: url('static/image/realisations/ACCEUIL.png');">
-        <div class="item-desc">
-          <h3>IMMO Espace Sud</h3>
-          <p>Création d’un site B2B d’annonces immobilières avec interfaçage SIG et import automatique.
-            Approche agile et accompagnement graphique personnalisé pour un acteur local
-            60 jours/homme pour une solution sur mesure dédiée aux agences du Sud</p>
-        </div>
-      </div>
-      <div class="item" style="background-image: url('static/image/realisations/d.jpg');">
-        <div class="item-desc">
-          <h3>DIGICEL FWI</h3>
-          <p>Refonte complète de plusieurs dizaines d’applications web pour un grand groupe caribéen.
-            Méthodologie agile multisite adaptée à des projets complexes et à forte valeur ajoutée.
-            Plus de 1000 jours/homme mobilisés pour des solutions sur-mesure dans divers services
-            </p>
-        </div>
-      </div>
-      <div class="item" style="background-image: url('static/image/realisations/page acceuil.png');">
-        <div class="item-desc">
-          <h3>Art & Fact innovation</h3>
-          <p>Réalisation d’un site vitrine innovant avec charte graphique, contenus 3D et accompagnement digital.
-            Livraison en mode agile et formation des gérants à la gestion de contenu et au marketing. 
-            Mission courte (15 jours/homme) avec impact fort sur la communication du concept</p>
-        </div>
-      </div>
-      <div class="item" style="background-image: url('static/image/realisations/page acceuil1.png');">
-        <div class="item-desc">
-          <h3>EuroSCORE</h3>
-          <p>Développement d’un outil de calcul des risques chirurgicaux utilisé à l’échelle européenne.
-            Cycle en V, formalisation des spécifications algorithmiques et process AMOA rigoureux.
-            200 jours/homme pour une solution fiable et conforme aux exigences médicales</p>
-        </div>
-      </div>
-      <div class="item" style="background-image: url('static/image/realisations/e.png');">
-        <div class="item-desc">
-          <h3>PIL-Démat</h3>
-          <p>Développement d’une solution cloud complète de dématérialisation : signature électronique, GED, archivage, Chorus Pro, etc.
-            Projet local mené en mode agile avec intégration personnalisée via Web Services.
-            210 jours/homme pour une plateforme sécurisée et hautement disponible</p>
-        </div>
-      </div>
-      <div class="item" style="background-image: url('static/image/réalisations/Cambionet/image(cambionet).png');">
-        <div class="item-desc">
-          <h3>Cambionet Search</h3>
-          <p>Création d’un moteur de recherche intelligent pour l’INRAE, destiné aux analyses bibliométriques.
-            Projet mené en cycle en V, avec un important travail de spécification algorithmique.
-            180 jours/homme pour une solution sur mesure déployée dans plusieurs territoires caribéens</p>
-        </div>
-      </div>
-      <div class="item" style="background-image: url('static/image/réalisations/Guide orientation Digitale ctm/image.png');">
-        <div class="item-desc">
-          <h4>Guide d’Orientation Digitale CTM</h4>
-          <p>Développement d’une brochure interactive pour orienter enseignants, étudiants et parents.
-              Digitalisation des contenus physiques avec mise en base de données et UX-UI moderne.
-              70 jours/homme en approche agile pour une plateforme informative et accessible</p>
-        </div>
-      </div>
-      <div class="item" style="background-image: url('static/image/réalisations/ViATV/vIatv.png');">
-        <div class="item-desc">
-          <h3>ViaATV</h3>
-          <p>Développement d’une application mobile pour la chaîne locale ViaATV, avec publication sur les stores.
-            Sprints de 2 semaines et interfaçage complet avec les API de contenus et de publicité 45 jours/homme pour une solution fluide et connectée aux outils du client</p>
-        </div>
-      </div> {% endcomment %}
     </div>
   </section>
 
@@ -854,7 +784,7 @@
       </div>
     </div>
     
-    <div id="photo-cartoon">
+    <div id="img-avis">
       <img src="static\image\photo cartoon.png" alt="" style="width: 100%; height: 100%; object-fit: contain;" />
     </div>
   </section> {% endcomment %}
@@ -877,6 +807,12 @@
         title="Carte de localisation de PIL-média">
       </iframe>
     </div>
+    <div class="div-coordonnees">
+      <div class="div-coordonnees-item"> <img src="{% static 'image/logo_linkedin.svg' %}" alt="LinkedIn PIL-MEDIA"> <p> <a href="https://www.linkedin.com/company/pil-m-dia/" target="_blank" rel="noopener noreferrer"> PIL-MEDIA </a> </p> </div>
+
+      <div class="div-coordonnees-item"> <img src={% static "image/logo_telephone.svg" %}> <p>+596 (0)596 37 51 85</p> </div>
+      <div class="div-coordonnees-item"> <img src={% static "image/logo_mail.svg" %}> <p>contact@pil-media.com</p> </div> 
+    </div>
     <p>&copy; 2025 PIL-MEDIA - Tous droits réservés.</p>
   </footer>
 
@@ -891,6 +827,8 @@
 
   <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
   <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 
 
   <script src="{% static 'js/index.js' %}"></script> 
@@ -907,6 +845,8 @@
       });
     });
   </script>
+
+  <button id="backToTopBtn" title="Remonter en haut"><i class="fas fa-chevron-up"></i></button>
 
 </body>
 </html>
