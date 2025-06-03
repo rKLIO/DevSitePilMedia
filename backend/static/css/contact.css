@@ -144,6 +144,7 @@ input[type="tel"] {
     display: flex;
     width: 100%;
     gap: .5rem;
+    z-index: 10001 !important;
   }
 
 form input{
