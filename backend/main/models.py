@@ -31,3 +31,37 @@ class DemandeProjet(models.Model):
     
     def __str__(self):
         return f"{self.nom or 'Sans nom'} - {self.email or 'Sans email'}"
+
+class ServiceImage(models.Model):
+    titre = models.CharField(max_length=255, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    image = models.FilePathField(
+    path='static/image/services/',
+    match = r'.*\.(jpg|jpeg|png|gif|svg)$',
+    recursive=True,
+    allow_files=True,
+    allow_folders=False,
+    blank=True,
+    null=True
+    )
+    alt_field = models.CharField(max_length=255, blank=True, null=True)
+    order = models.PositiveIntegerField(default=0, blank=True, null=True)
+
+    # def description_as_list(self):
+    #     return [line.strip('- ').strip() for line in self.description.splitlines() if line.strip().startswith("-")]
+    
+    # def get_bullet_points(self):
+    #     """
+    #     Retourne uniquement les lignes de type liste (celles commençant par '-').
+    #     """
+    #     if not self.description:
+    #         return []
+        
+    #     lines = self.description.splitlines()
+    #     return [line.lstrip('- ').strip() for line in lines if line.strip().startswith('-')]
+
+
+    def __str__(self):
+        return self.titre if self.titre else "Image sans titre"
+    
+    

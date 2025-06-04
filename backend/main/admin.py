@@ -13,4 +13,12 @@ class RealisationAdmin(admin.ModelAdmin):
 
 admin.site.register(Realisation, RealisationAdmin)
 
+class ServiceImageAdmin(admin.ModelAdmin):
+    list_display = ('titre','description','image', 'alt_field', 'order')
+    search_fields = ('alt_field',)
+    list_filter = ('order',)
+    ordering = ('order',)
+    
+admin.site.register(ServiceImage, ServiceImageAdmin)
+
 admin.site.register(DemandeProjet)

@@ -12,17 +12,19 @@ html, body {
   height: 100vh;
   display: flex;
   justify-content: center;
-  padding-top: 130px;
+  padding-top: 110px;
   background-color: var(--bg);
   background-repeat: no-repeat; 
   background-position: left bottom;
+  background-size: 60vh; 
+  padding-bottom: 0px;
 }
 
 
 
 .div-contact{
   border-radius: 30px; 
-  height: 100%; 
+  height: 80%; 
   width: 70%;  
   box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.3); 
   padding: 2rem;
@@ -154,6 +156,7 @@ form input{
 @media screen and (max-width: 1024px) {
   .div-contact {
     width: 100%;
+    height: 90%;
   }
 }
 
@@ -163,12 +166,12 @@ form input{
   }
 }
 
-@media screen and (max-width: 983px) {
+@media screen and (max-width: 1024px) {
     .section {
         background-image: None !important;
     }
 }
-@media screen and (max-width: 1024px) {
+/* @media screen and (max-width: 1024px) {
     .section {
         background-size: 30rem;
     }
@@ -178,11 +181,55 @@ form input{
     .section {
         background-size: 35rem;
     }
-}
+} */
 
 @media screen and (max-width: 375px) {
   .section h2{
     font-size: 2.7rem;
     margin-bottom: 2rem; 
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .section h2{
+    font-size: 2.4rem;
+    margin-bottom: 2rem; 
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .section {
+    background-size: 50vh;
+  }
+}
+
+
+@media screen and (max-height: 770px) {
+  .div-contact {
+    height: 90%;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .section h2 {
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media screen and (max-height: 650px) {
+  form {
+    gap: .7rem;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .section h2 {
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-height: 580px) {
+  .section h2 {
+    margin-bottom: 0rem;
   }
 }

@@ -1,4 +1,5 @@
 {% comment %} {% load static %} {% endcomment %}
+{% load cms_tags sekizai_tags %}
 {% load static tailwind_tags %}
 <!DOCTYPE html>
 <html lang="fr">
@@ -19,10 +20,11 @@
   <link rel="shortcut icon" type="image/png" href="{% static 'image/logo_pilmedia_favicon.png' %}" >
 
   {% tailwind_css %}
-
+{% render_block "css" %}
 </head>
 
 <body>
+{% cms_toolbar %}
 
   <!-- Navigation -->
   <header class="header">
@@ -52,12 +54,9 @@
 
   <!-- Hero Section -->
   <section id="home" class="hero">
-    {% comment %} <video autoplay muted loop id="bg-video">
-      <source src="media/tech-background.mp4" type="video/mp4" />
-    </video> {% endcomment %}
     <div class="hero-content">
       <h1>PIL-MÉDIA</h1>
-      <p>Développement sur-mesure, design futuriste & expérience immersive</p>
+      <p>{% placeholder "slogan" %}</p>
     </div>
   </section>
 
@@ -420,56 +419,13 @@
           </div>
           
           <div id="hidden-texts" style="display: none;">  
+            {% for service in services %}
             <div style="margin-bottom: 1rem;">
-              <h3>Outils décisionnels</h3>
-              <p>Vos performances peuvent être optimisées avec les bons outils. 
-                Les outils décisionnels analysent vos données pour extraire l’essentiel. 
-                Ils vous aident à prendre des décisions stratégiques.</p>
-                
+              <h3>{{ service.titre }}</h3>
+              <p>{{ service.description|linebreaksbr }}</p>
               <div class="divider-v"></div>
             </div>
-            <div style="margin-bottom: 1rem;">
-              <h3>Gestion de la Relation Client</h3>
-              <p>Un CRM remplace les suivis manuels et les oublis de relance. 
-                Il centralise les interactions et automatise les rappels. 
-                Résultat : un meilleur suivi client et plus de fidélité.</p>
-                
-              <div class="divider-v"></div>
-            </div>
-            <div style="margin-bottom: 1rem;">
-              <h3>Signature électronique</h3>
-              <p>Signez vos contrats et documents rapidement, même à distance. 
-                Notre solution certifiée garantit la valeur légale de chaque signature. 
-                Elle sécurise vos échanges en toute conformité.</p>
-                
-              <div class="divider-v"></div>
-            </div>
-            <div style="margin-bottom: 1rem;">
-              <h3>GED</h3>
-              <p>La GED structure vos documents numériques de façon centralisée. 
-                Elle gère leur cycle de vie : création, modification, archivage. 
-                Vous gagnez en organisation et en traçabilité.
-              <div class="divider-v"></div>
-            </div>
-            <div style="margin-bottom: 1rem;">
-              <h3>Développement sur mesure</h3>
-              <p>Nous créons des solutions adaptées à vos besoins spécifiques. 
-                Applications web, mobiles ou logiciels : tout est possible. 
-                Vos contraintes et objectifs guident notre développement.</p>
-              <div class="divider-v"></div>
-            </div>
-            <div style="margin-bottom: 1rem;">
-              <h3>La transition numérique</h3>
-              <p>La transition numérique intègre des outils digitaux pour moderniser votre entreprise. 
-                Elle optimise vos processus et améliore vos performances. 
-                Concrètement, cela inclut :</p>
-              <ul style="list-style-type: none; text-align: left; columns: 1;">
-                <li>- Optimisation des tâches et des ressources </li>
-                <li>- Amélioration de la communication et du reporting</li>
-                <li>- Réduction des erreurs et renforcement des processus</li>
-                <li>- Conformité aux normes légales</li>
-              </ul>    
-            </div>
+            {% endfor %}
           </div>      
         </div>
 
@@ -480,24 +436,12 @@
               <img src="https://d1xm195wioio0k.cloudfront.net/images/mockup/macbook-cover.svg" alt="" class="cover">
               <div id="carousel-laptop" class="img-laptop">
                   <div class="carousel-inner custom-laptop-carousel-inner">
-                    <div class="carousel-item custom-laptop-carousel-item active">
-                      <img src="static\image\outils decision\image (1).jpg" alt="First slide">
-                    </div>
-                    <div class="carousel-item custom-laptop-carousel-item">
-                      <img src="static\image\Gestion de la relation client\image.jpg" alt="Second slide">
-                    </div>
-                    <div class="carousel-item custom-laptop-carousel-item">
-                      <img src="static\image\Signature electronique\blue-ballpoint-pen-marks-ideas-paper-generated-by-ai.jpg" alt="Third slide">
-                    </div>
-                    <div class="carousel-item custom-laptop-carousel-item">
-                      <img src="static\image\GED\image.jpg" alt="Fourth slide">
-                    </div>
-                    <div class="carousel-item custom-laptop-carousel-item">
-                      <img src="static\image\developpement sur mesure\developpemtn sur mesure.jpg" alt="Fifth slide">
-                    </div>
-                    <div class="carousel-item custom-laptop-carousel-item">
-                      <img src="static\image\transitin numérique\image 1 (4).jpg" alt="Sixth slide">
-                    </div>
+                    
+                    {% for service in services %}
+                      <div class="carousel-item custom-laptop-carousel-item {% if forloop.first %} active{% endif %}">
+                        <img src={{ service.image }} alt={{ service.alt_field }}>
+                      </div>
+                    {% endfor %}
                   </div>
               </div>
             </div>
@@ -522,7 +466,7 @@
       <!-- Formation 1 -->
       <div class="formations-disposition" id="item1">
         <div class="formations-item">
-          <div class="formations-img"> <img src="{% static 'image/formation/Vector.svg' %}"> </div>
+          <div class="formations-img"> <img src="{% static 'image/formation/logo_formation_dev-web.svg' %}"> </div>
           <div class="formations-title"> 
             <h3>Développement & Web</h3> 
           </div>
@@ -538,7 +482,7 @@
       <!-- Formation 2 -->
       <div class="formations-disposition" id="item2">
         <div class="formations-item">
-          <div class="formations-img"> <img src="{% static 'image/formation/material-symbols-light_developer-mode-tv-outline-sharp.svg' %}"> </div>
+          <div class="formations-img"> <img src="{% static 'image/formation/logo_formation_sys-reseaux.svg' %}"> </div>
           <div class="formations-title">
             <h3>Systèmes & Réseaux</h3>
           </div>
@@ -554,7 +498,7 @@
       <!-- Formation 3 -->
       <div class="formations-disposition" id="item3">
         <div class="formations-item">
-          <div class="formations-img"> <img src="{% static 'image/formation/streamline_module-puzzle-3-solid.svg' %}"> </div>
+          <div class="formations-img"> <img src="{% static 'image/formation/logo_formation_solutions-sur-mesure.svg' %}"> </div>
           <div class="formations-title"> 
             <h3>Solutions sur mesure</h3>
           </div>
@@ -570,7 +514,7 @@
       <!-- Formation 4 -->
       <div class="formations-disposition" id="item4">
         <div class="formations-item">
-          <div class="formations-img"> <img src="{% static 'image/formation/Group 2.svg' %}"> </div>
+          <div class="formations-img"> <img src="{% static 'image/formation/logo_formation_donnees-bureautique.svg' %}"> </div>
           <div class="formations-title">
             <h3>Données & Bureautique</h3>
           </div>
@@ -587,7 +531,7 @@
       <div class="formations-disposition" id="item5">
         <div class="formations-item">
           <div class="formations-img">
-            <img src="{% static 'image/formation/icons8_idea.svg' %}">
+            <img src="{% static 'image/formation/logo_formation_pilotage-gestion.svg' %}">
           </div>
           <div class="formations-title">
             <h3>Pilotage & Gestion</h3>
@@ -848,5 +792,6 @@
 
   <button id="backToTopBtn" title="Remonter en haut"><i class="fas fa-chevron-up"></i></button>
 
+{% render_block "js" %} 
 </body>
 </html>

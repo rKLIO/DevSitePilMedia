@@ -6,11 +6,13 @@ from django.conf import settings
 
 def main_page(request):
     realisation = Realisation.objects.all()
+    service = ServiceImage.objects.all()
     context={
         'title': 'PIL - MEDIA',
         'description': 'This is the main page of PIL - MEDIA.',
         'content': 'Welcome to the main page! Here you can find various resources and information about our application.',
-        'realisations': realisation
+        'realisations': realisation,
+        'services': service,
     }
     return render(request, 'index.html', context=context)
 
