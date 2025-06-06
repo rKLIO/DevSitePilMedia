@@ -1,0 +1,12 @@
+{% load static %}
+
+<div class="owl-carousel custom-carousel owl-theme">
+      {% for realisation in realisations %}
+        <div class="item{% if forloop.first %} active{% endif %}" style="background-image: url('{{ realisation.image.url }}');">
+          <div class="item-desc">
+            <h3>{{ realisation.nom_projet }}</h3>
+            <p>{{ realisation.description }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>

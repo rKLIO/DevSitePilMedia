@@ -1,0 +1,32 @@
+{% load static %}
+
+{% for service in services %}
+    <div style="margin-bottom: 1rem;">
+      <h3>{{ service.titre }}</h3>
+      <p>{{ service.description|linebreaksbr }}</p>
+      <div class="divider-v"></div>
+    </div>
+    {% endfor %}
+  </div>      
+</div>
+
+<div class="ordi_container" id="ordi_services">
+  <div class="mockup mockup-macbook">
+    <div class="part top">
+      <img src="https://d1xm195wioio0k.cloudfront.net/images/mockup/macbook-top.svg" alt="" class="top">
+      <img src="https://d1xm195wioio0k.cloudfront.net/images/mockup/macbook-cover.svg" alt="" class="cover">
+      <div id="carousel-laptop" class="img-laptop">
+          <div class="carousel-inner custom-laptop-carousel-inner">
+            
+            {% for service in services %}
+              <div class="carousel-item custom-laptop-carousel-item {% if forloop.first %} active{% endif %}">
+                <img src="{{ service.image.url }}" alt="{{ service.alt_field }}">
+              </div>
+            {% endfor %}
+          </div>
+      </div>
+    </div>
+    <div class="part bottom">
+      <img src="https://d1xm195wioio0k.cloudfront.net/images/mockup/macbook-cover.svg" alt="" class="cover">
+      <img src="https://d1xm195wioio0k.cloudfront.net/images/mockup/macbook-bottom.svg" alt="" class="bottom">
+    </div>

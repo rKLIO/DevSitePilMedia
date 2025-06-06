@@ -176,7 +176,8 @@ LANGUAGES = [
 ]
 
 CMS_TEMPLATES = [
-    ('index.html', 'Template de base'),
+    ('index.html', 'Home Page'),
+    ('contact.html', 'Contact Page'),
 ]
 
 CMS_CONFIRM_VERSION4 = True
