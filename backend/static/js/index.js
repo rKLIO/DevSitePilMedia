@@ -152,24 +152,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // On sélectionne la barre de navigation
 const nav = document.querySelector('.header');
-
-// On sélectionne la section qu'on veut surveiller (par exemple "about")
 const textElement = document.getElementById('home');
+const menuLat = document.querySelector('.menu-lat'); // Ajout
 
-// On écoute l'événement scroll
 window.addEventListener('scroll', () => {
-  // On récupère les coordonnées de la section par rapport à la fenêtre
   const rect = textElement.getBoundingClientRect();
-
-  // Si la section est complètement en dehors de l’écran (ni haut ni bas visible)
   const isOutsideView = rect.bottom <= 0 || rect.top >= window.innerHeight;
 
-  // Si on est sorti de la section => on affiche l’ombre
   if (isOutsideView) {
+    nav.style.backgroundColor = 'white';
+    $('.header a').css('color', 'black');
     nav.style.boxShadow = '0 3px 9px 0px rgba(0, 0, 0, 0.1)';
+    if (menuLat) menuLat.style.color = 'black'; // <-- menu lat en noir
   } else {
-    // Sinon, on est dans la section => on cache l’ombre
+    nav.style.backgroundColor = 'transparent';
+    $('.header a').css('color', 'white');
     nav.style.boxShadow = '';
+    if (menuLat) menuLat.style.color = 'white'; // <-- menu lat en blanc
   }
 });
 

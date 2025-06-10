@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
   canvas.style.zIndex = 0;
   canvas.style.width = '100%';
   canvas.style.height = '100%';
+  
+  // canvas.id = "canvas";
   document.body.appendChild(canvas);
 
   const ctx = canvas.getContext('2d');
@@ -65,18 +67,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Partie 2 : Three.js Logo 3D ---
 
+  function getCameraY() {
+    // Exemple : plus l'écran est petit, plus la caméra est proche
+    // Ajuste les valeurs selon ton rendu souhaité
+    const h = window.innerHeight;
+    if (h < 500) return 80;
+    if (h < 800) return 70;
+    if (h < 1200) return 65;
+    return 60;
+  }
+
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 100);
-  camera.position.set(0, 60 ,0);
+  camera.position.set(0, getCameraY(), 0);
   camera.lookAt(0, 0, 0);
 
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-  renderer.setSize(window.innerWidth, window.innerHeight);
+
+  const heroElement = document.getElementById("home");
+  const width = heroElement.clientWidth;
+  const height = heroElement.clientHeight;
+  renderer.setSize(width, height);
+
+
   renderer.setClearColor(0x000000, 0); // fond transparent pour voir le canvas étoilé derrière
-  renderer.domElement.style.position = 'absolute';
-  renderer.domElement.style.top = 0;
-  renderer.domElement.style.left = 0;
-  renderer.domElement.style.zIndex = 1;
+  // renderer.domElement.style.position = 'absolute';
+  // renderer.domElement.style.top = 0;
+  // renderer.domElement.style.left = 0;
+  // renderer.domElement.style.zIndex = 1;
+  renderer.domElement.id = "canvas";
   document.body.appendChild(renderer.domElement);
 
   const controls = new OrbitControls(camera, renderer.domElement);
@@ -129,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Chargement de la texture de dégradé pour le centre
   const texturecentreLoader = new THREE.TextureLoader();
-  const gradientcentreTexture = texturecentreLoader.load('./static/image/degrader_centre.jpg', (texture) => {
+  const gradientcentreTexture = texturecentreLoader.load('/static/image/degrader_centre.jpg', (texture) => {
     texture.wrapS = THREE.RepeatWrapping;
     texture.wrapT = THREE.RepeatWrapping;
     texture.repeat.set(1, 1);
@@ -138,12 +157,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 // Objet centre fixe
-  mtlLoader.setPath('./static/image/Logo/');
+  mtlLoader.setPath('/static/image/Logo/');
   mtlLoader.load('logo_centre.mtl', (materials0) => {  
     materials0.preload();
     objloader.setMaterials(materials0);
 
-    objloader.load('./static/image/Logo/logo_centre.obj', (centre) => {
+    objloader.load('/static/image/Logo/logo_centre.obj', (centre) => {
     centre.scale.set(1, 1, 1);
 
       // Remplacement du matériau par le dégradé
@@ -177,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //création du dégradé pour la texture de la cote 1
   // Chargement de la texture de dégradé pour la cote 1
  const texturecote1Loader = new THREE.TextureLoader();
-  const gradientcote1Texture = texturecote1Loader.load('./static/image/degrader_coter.jpg', (texture1) => {
+  const gradientcote1Texture = texturecote1Loader.load('/static/image/degrader_coter.jpg', (texture1) => {
     texture1.wrapS = THREE.RepeatWrapping;
     texture1.wrapT = THREE.RepeatWrapping;
     texture1.repeat.set(1, 1);
@@ -186,12 +205,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 // Chargement de l'objet 3D avec MTLLoader et OBJLoader
-  mtlLoader.setPath('./static/image/Logo/');
+  mtlLoader.setPath('/static/image/Logo/');
   mtlLoader.load('logo_cote1.mtl', (materials) => {
     materials.preload();
     objloader.setMaterials(materials);
 
-    objloader.load('./static/image/Logo/logo_cote1.obj', (cote1) => {// décalé pour tourner autour du centre
+    objloader.load('/static/image/Logo/logo_cote1.obj', (cote1) => {// décalé pour tourner autour du centre
       cote1.scale.set(1, 1, 1);
 
       // Remplacement du matériau par le dégradé
@@ -221,7 +240,7 @@ rotatingGroupGlobal.add(rotatingGroupLocal);
 // Création de la texture de dégradé pour la cote 2
   // Chargement de la texture de dégradé pour la cote 2
   const texturecote2Loader = new THREE.TextureLoader();
-  const gradientcote2Texture = texturecote2Loader.load('./static/image/degrader_coter.jpg', (texture2) => {
+  const gradientcote2Texture = texturecote2Loader.load('/static/image/degrader_coter.jpg', (texture2) => {
     texture2.wrapS = THREE.RepeatWrapping;
     texture2.wrapT = THREE.RepeatWrapping;
     texture2.repeat.set(1, 1);
@@ -230,13 +249,13 @@ rotatingGroupGlobal.add(rotatingGroupLocal);
   });
 
 // Chargement de l'objet 3D pour la cote 2
-  mtlLoader.setPath('./static/image/Logo/');
+  mtlLoader.setPath('/static/image/Logo/');
   mtlLoader.load('logo_cote2.mtl', (materials2) => {
     materials2.preload();
     objloader.setMaterials(materials2);
 
     // Chargement de l'objet 3D pour la cote 2
-    objloader.setPath('./static/image/Logo/');
+    objloader.setPath('/static/image/Logo/');
     objloader.load('logo_cote2.obj', (cote2) => {
       cote2.scale.set(1, 1, 1);
 
@@ -306,13 +325,19 @@ rotatingGroupGlobal.add(rotatingGroupLocal);
   // --- Gestion redimensionnement ---
 
   window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    /*canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;*/
     initializeStars();
 
-    camera.aspect = window.innerWidth / window.innerHeight;
+    const heroElement = document.getElementById("home");
+    const width = heroElement.clientWidth;
+    const height = heroElement.clientHeight;
+    renderer.setSize(width, height);
+
+    camera.position.set(0, getCameraY(), 0);
+    camera.aspect = width / height;
     camera.updateProjectionMatrix();
 
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    // renderer.setSize(window.innerWidth, window.innerHeight);
   });
 });

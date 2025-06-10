@@ -95,24 +95,23 @@ body {
 }*/
 
 #canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vh;
+  height: 100vw;
+  z-index: 1;
+  pointer-events: none; /* pour ne pas bloquer les clics */
+}
+
+
+#three-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 0;
-  pointer-events: none; /* pour ne pas bloquer les clics */
-  background: rgba(0, 10, 20, 1);
-}
-
-
-#three-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 0;
+  z-index: 1;
   pointer-events: none; /* ou auto si tu veux que les controls fonctionnent */
 }
 

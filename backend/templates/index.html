@@ -28,8 +28,7 @@
 
 <body>
 {% cms_toolbar %}
-
-  <canvas id="canvas"></canvas>
+ 
 
   <!-- Navigation -->
   <header class="header">
@@ -68,7 +67,7 @@
     </div>
   </section>
 
-  <section style="display: flex; gap: 1rem; justify-content: center; align-items: center; background-color:rgb(0, 112, 204); padding: 1rem 0;">
+  <section style="display: flex; gap: 1rem; justify-content: center; align-items: center; background-color:rgb(0, 112, 204); padding: 1rem 0; position: relative; z-index: 10;">
     <i class="fa fa-info-circle" style="font-size:24px"></i> <p style="margin: 0; color:white">Site en travaux, veuillez trouver ci-contre le site original de PIL - MEDIA :</p>
     <a href="https://www.pil-media.com/" target="_blank" rel="noopener noreferrer" style="color:#13f3ff;">Site de PIL - MEDIA</a>
   </section>
@@ -525,7 +524,7 @@
   </section>
 
   <!-- Pourquoi nous -->
-  <section class="section" id="pourquoi-nous" style="background-image: url('static/image/damien_pourquoi_nous.svg');">
+  <section class="section" id="pourquoi-nous" style="background-image: url('/static/image/damien_pourquoi_nous.svg');">
     <h2>Pourquoi - Nous ?</h2>
     <div style="justify-content: center; display: flex; align-items: center; ">  
       
@@ -744,9 +743,9 @@
   <script src="https://unpkg.com/split-type"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 
-
-  <script src="{% static 'js/index.js' %}"></script> 
   <script type="module" src="{% static 'js/logo_3D.js' %}"></script>
+  <script src="{% static 'js/index.js' %}"></script> 
+  
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {

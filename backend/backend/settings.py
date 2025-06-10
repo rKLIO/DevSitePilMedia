@@ -181,3 +181,9 @@ CMS_TEMPLATES = [
 ]
 
 CMS_CONFIRM_VERSION4 = True
+
+# settings.py
+
+if DEBUG:
+    import mimetypes
+    mimetypes.add_type("application/javascript", ".js", True)
