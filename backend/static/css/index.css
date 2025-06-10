@@ -33,7 +33,7 @@ body {
 .header {
   position: fixed;
   width: 100%;
-  background-color: var(--bg);
+  /* background-color: var(--bg); */
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
@@ -59,7 +59,7 @@ body {
 
 .nav a {
   /* margin-left: 24px; */
-  color: var(--text);
+  color: white;
   text-decoration: none;
   transition: color 0.3s ease;
   display: flex;
@@ -88,7 +88,8 @@ body {
   align-items: center;
   text-align: center;
   padding: 100px 20px;
-  background-color: var(--bg);
+  /* background-color: var(--bg); */
+  z-index: 10;
 }
 
 #bg-video {
@@ -109,19 +110,24 @@ body {
   color: transparent;
   text-align: center; 
   font-family: 'Ethnocentric', sans-serif;
+  filter: drop-shadow(5px 5px 10px rgb(0, 0, 0));
 }
 
 .hero-content p {
   margin-top: 1rem;
   font-size: 1.2rem;
-  color: var(--text);
+  color: whitesmoke;
   text-align: center;
+  text-shadow: #000000 5px 5px 10px;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
 }
 
 /* Section standard */
 .section {
   padding: 10% 10%;
   background-color: var(--bg);
+  position: relative;
+  z-index: 10;
 }
 
 .section h2 {
@@ -204,7 +210,7 @@ form {
   margin: auto;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 16px;
 }
 
 form input,
@@ -238,6 +244,8 @@ footer {
   text-align: center;
   background-color: #0b0d13;
   color: #888;
+  position: relative;
+  z-index: 10;
 }
 
 #map {
@@ -556,6 +564,8 @@ footer {
   grid-template-columns: 1.5fr .5fr; 
   background-color: #0B1E36; 
   padding: 50px 10%;
+  position: relative;
+  z-index: 10;
 }
 
 .incitation-txt {
@@ -760,6 +770,8 @@ footer {
 .game-section {
   background-color: var(--bg);
   padding: 100px 10%;
+  position: relative;
+  z-index: 10;
 }
 
 .game-section h2 {
