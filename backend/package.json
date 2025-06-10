@@ -1,0 +1,27 @@
+{
+  "name": "exemple-site",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krsblly78/Projet-PIL-Media.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krsblly78/Projet-PIL-Media/issues"
+  },
+  "homepage": "https://github.com/krsblly78/Projet-PIL-Media#readme",
+  "description": "",
+  "dependencies": {
+    "three": "^0.175.0"
+  },
+  "devDependencies": {
+    "vite": "^6.3.2"
+  }
+}
